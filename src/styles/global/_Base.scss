@@ -6,7 +6,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box; 
-  font-family: 'Poppins', sans-serif;
 }
 
 /* Elements */
@@ -34,14 +33,16 @@ li{
 h1,h2,h3,h4,h5{
   font-weight: 700;
   color: $Light;
+  font-family: 'Poppins', sans-serif;
 }
 p,span{
   font-weight: 400;
   color: $Light;
+  font-family: 'Poppins', sans-serif;
 }
 img,input,svg,div{
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-input:focus,textarea:focus,select:focus{
+input:focus,textarea:focus,select:focus,button:focus{
   outline: none;
 }

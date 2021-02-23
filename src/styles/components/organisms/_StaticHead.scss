@@ -1,0 +1,16 @@
+.StaticHead{
+  display: none;
+  height: 50px;
+  .l-contain{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@include mq($Desktop){
+  .StaticHead{
+    display: block;
+  }
+}

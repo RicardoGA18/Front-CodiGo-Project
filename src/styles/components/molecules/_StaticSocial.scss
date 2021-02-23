@@ -1,0 +1,17 @@
+.StaticSocial{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  &__Item{
+    margin-left: 20px;
+    i{
+      transition: .3s all;
+      color: $Light;
+    }
+  }
+  &__Item:hover{
+    i{
+      color: $LightBlue;
+    }
+  }
+}

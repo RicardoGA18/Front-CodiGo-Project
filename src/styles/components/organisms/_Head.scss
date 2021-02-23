@@ -1,0 +1,10 @@
+.Head{
+  height: 70px;
+  background-color: $Bg-Container;
+  .l-contain{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

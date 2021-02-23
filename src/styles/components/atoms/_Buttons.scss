@@ -1,0 +1,93 @@
+.Button-Primary{
+  width: 100%;
+  height: 50px;
+  @include flexCenter;
+  border: none;
+  border-radius: 10px;
+  background-color: $LightBlue;
+  color: $Light;
+  transition: .3s all;
+  cursor: pointer;
+  i{
+    margin-right: 15px;
+    color: $Light;
+  }
+}
+.Button-Primary:hover{
+  background-color: $Blue-Hover;
+}
+
+.Button-Outline{
+  width: 100%;
+  height: 50px;
+  @include flexCenter;
+  border: 2px solid $Light;
+  background: none;
+  border-radius: 10px;
+  color: $Light;
+  transition: .3s all;
+  cursor: pointer;
+  i{
+    transition: .3s all;
+    margin-right: 15px;
+    color: $Light;
+  }
+}
+.Button-Outline:hover{
+  background-color: $Light;
+  color: $Bg-Primary;
+  i{
+    color: $Bg-Primary;
+  }
+}
+
+.Button-Small{
+  width: 50px;
+  height: 50px;
+  @include flexCenter;
+  border: 2px solid $Light;
+  background: none;
+  border-radius: 10px;
+  color: $Light;
+  cursor: pointer;
+  transition: .3s all;
+  i{
+    color: $Light;
+  }
+}
+.Button-Small:hover{
+  background-color: $LightBlue;
+}
+
+.Button-Map{
+  background: none;
+  display: inline-grid;
+  align-items: center;
+  border-radius: 5px;
+  grid-template-columns: 36px 1fr;
+  grid-gap: 8px;
+  padding: 3px 7px;
+  border: 2px solid $Light;
+  cursor: pointer;
+  transition: .3s all;
+  i{
+    color: $Light;
+    transition: .3s all;
+  }
+  p{
+    font-weight: bold;
+    font-size: 14px;
+    color: $Light;
+    line-height: 17px;
+    transition: .3s all;
+  }
+}
+.Button-Map:hover{
+  background: $Light;
+  p{
+    color: $Bg-Primary;
+  }
+  i{
+    color: $Bg-Primary;
+  }
+}

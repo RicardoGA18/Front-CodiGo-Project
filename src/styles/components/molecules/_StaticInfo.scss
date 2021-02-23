@@ -1,0 +1,16 @@
+.StaticInfo{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  &__Item{
+    @include flexCenter;
+    margin-right: 25px;
+    i{
+      margin-right: 10px;
+      color: $Light;
+    }
+    p{
+      color: $Light;
+    }
+  }
+}

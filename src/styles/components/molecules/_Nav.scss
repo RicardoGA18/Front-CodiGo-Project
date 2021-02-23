@@ -1,0 +1,49 @@
+.Nav{
+  display: flex;
+  height: 100%;
+  align-items: center;
+  &__Logo{
+    margin-right: 15px;
+    img{
+      width: 117px;
+    }
+  }
+  &__Item{
+    height: 100%;
+    @include flexCenter;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: .3s all;
+    position: relative;
+  }
+  &__Item:hover{
+    background-color: $Hover-Light;
+  }
+  &__Item.is-active{
+    background-color: $Hover-Light;
+  }
+  &__Item:hover .DropBox{
+    display: grid;
+  }
+  &__Item .DropBox{
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    width: 300px;
+    background-color: $Bg-Container;
+    grid-template-columns: 1fr 1fr;
+    &__Item{
+      width: 100%;
+      @include flexCenter;
+      padding: 10px 10px;
+      transition: .3s all;
+      p{
+        color: $Light;
+      }
+    }
+    &__Item:hover{
+      background-color: $Hover-Light;
+    }
+  }
+}

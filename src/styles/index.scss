@@ -16,10 +16,19 @@
 /* Components */
 
 /* Atoms */
+@import './components/atoms/Buttons';
+@import './components/atoms/Inputs';
 
 /* Molecules */
+@import './components/molecules/StaticInfo';
+@import './components/molecules/StaticSocial';
+@import './components/molecules/Nav';
+@import './components/molecules/HeadActions';
 
 /* Organisms */
+@import './components/organisms/StaticHead';
+@import './components//organisms//Head';
 
 /* Pages */
+@import './components/pages/HomeView';
 
