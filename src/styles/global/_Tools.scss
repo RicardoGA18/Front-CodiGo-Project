@@ -1,0 +1,19 @@
+@mixin mq($breakpoint) {
+  @media screen and (min-width: $breakpoint){
+    @content;
+  }
+}
+
+@mixin flexCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin setAutoGrid($minRow,$maxRow,$minCol,$maxCol,$gapRow,$gapCol){
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax($minRow,$maxRow));
+  grid-template-columns: repeat(auto-fill, minmax($minCol,$maxCol));
+  grid-column-gap: $gapCol;
+  grid-row-gap: $gapRow;
+}

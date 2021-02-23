@@ -1,0 +1,136 @@
+/* Inverted Triangle architecture for CSS ( ITCSS ) */
+/* Settings */
+/* Colors */
+/* Font-Sizes */
+/* Shadows */
+/* Breakpoints */
+/* Tools */
+/* Generic and Elements */
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+/* Generic */
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Elements */
+html {
+  min-height: 100%;
+  background-color: #0F0F10;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+p, span {
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+img, input, svg, div {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+/* Objects */
+/* Normal */
+.Title-1 {
+  font-weight: 400;
+  font-size: 36px;
+}
+
+.Title-2 {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.Title-3 {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.Title-4 {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.Paragraph {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.Small {
+  font-weight: 400;
+  font-size: 12px;
+}
+
+/* Bold */
+.Title-1-bold {
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.Title-2-bold {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.Title-3-bold {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.Title-4-bold {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.Paragraph-bold {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.Small-bold {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* Components */
+/* Atoms */
+/* Molecules */
+/* Organisms */
+/* Pages */
+/*# sourceMappingURL=index.css.map */
