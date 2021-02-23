@@ -27,6 +27,7 @@ const Probe = () => {
           <ButtonMap></ButtonMap>
         </div>
       </div>
+      <h2>Hola Alain y Randolph</h2>
     </div>
   )
 }
