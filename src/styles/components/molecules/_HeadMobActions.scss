@@ -1,60 +1,49 @@
-.HeadActions{
+.HeadMobActions{
   height: 100%;
   display: flex;
   align-items: center;
   &__User{
-    padding: 0 15px;
     height: 100%;
-    display: flex;
-    align-items: center;
-    transition: .3s all;
+    @include flexCenter;
+    padding: 0 10px;
     i{
       color: $Light;
-      margin-right: 10px;
+    }
+  }
+  &__UserImg{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: $Hover-Light;
+    @include flexCenter;
+    img{
+      max-width: 100%;
+      max-height: 100%;
     }
     p{
       color: $Light;
     }
   }
-  &__UserImg{
-    margin-right: 10px;
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
-    @include flexCenter;
-    background-color: $Hover-Light;
-    overflow: hidden;
-    img{
-      max-width: 100%;
-      max-height: 100%;
-    }
-  }
-  &__User:hover{
-    background-color: $Hover-Light;
-  }
   &__Cart{
     height: 100%;
-    padding-left: 15px;
     @include flexCenter;
+    padding: 0 15px;
     position: relative;
     i{
-      transition: .3s all;
       color: $Light;
-    }
-  }
-  &__Cart:hover{
-    i{
-      color: $LightBlue;
     }
   }
   &__CartNumber{
     position: absolute;
+    background-color: $Blue-Hover;
     width: 20px;
     height: 20px;
-    background-color: $Blue-Hover;
     border-radius: 50%;
     @include flexCenter;
-    top: 13px;
-    right: -13px;
+    top: 6px;
+    right: 2px;
+    p{
+      color: $Light;
+    }
   }
 }

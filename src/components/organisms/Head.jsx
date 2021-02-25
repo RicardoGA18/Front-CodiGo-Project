@@ -1,19 +1,51 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 import Nav from '../molecules/Nav'
 import HeadActions from '../molecules/HeadActions'
+import logo from '../../assets/logo.png'
+import HeadMobActions from '../molecules/HeadMobActions'
+import setHeadObserver from '../../utils/setHeadObserver'
+import setNavBg from '../../utils/setNavBg'
 /* TEMP */
-import categories from '../../utils/JsonCategories'
+import categories from '../../utils/temp/JsonCategories'
+import user from '../../utils/temp/JsonUser'
+import cart from '../../utils/temp/JsonCart'
 
-const Head = () => {
+const Head = ({view}) => {
+  useEffect(() => {
+    setHeadObserver()
+    setNavBg()
+  },[])
+
   return (
     <Fragment>
-      <div className="Head l-container">
+      <div className="Head l-container" id="DesktopHead">
         <div className="l-contain">
           <Nav
             categories={categories}
+            view={view}
           ></Nav>
-          <HeadActions></HeadActions>
+          <HeadActions
+            user={user}
+            cart={cart}
+          ></HeadActions>
         </div>
+      </div>
+      <div className="HeadMobile l-container">
+        <div className="l-contain">
+          <Link to="/" className="HeadMobile__Logo">
+            <img src={logo} alt="Computer Store Logo"/>
+          </Link>
+          <HeadMobActions
+            categories={categories}
+            view={view}
+            user={user}
+            cart={cart}
+          ></HeadMobActions>
+        </div>
+      </div>
+      <div id="BgMobNav">
+        
       </div>
     </Fragment>
   )

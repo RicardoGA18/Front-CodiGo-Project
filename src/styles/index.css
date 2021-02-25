@@ -4,6 +4,7 @@
 /* Font-Sizes */
 /* Shadows */
 /* Breakpoints */
+/* Colocar Estos breakpoints en los util/setSliderMq.js!!! */
 /* Padding */
 /* Tools */
 /* Generic and Elements */
@@ -65,6 +66,29 @@ img, input, svg, div {
 
 input:focus, textarea:focus, select:focus, button:focus {
   outline: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px #616161;
+  box-shadow: inset 0 0 5px #616161;
+  border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #686868;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #464646;
 }
 
 /* Objects */
@@ -463,6 +487,452 @@ input:focus, textarea:focus, select:focus, button:focus {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+.HeadActions {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.HeadActions__User {
+  padding: 0 15px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.HeadActions__User i {
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+
+.HeadActions__User p {
+  color: #FFFFFF;
+}
+
+.HeadActions__UserImg {
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.HeadActions__UserImg img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.HeadActions__User:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.HeadActions__Cart {
+  height: 100%;
+  padding-left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.HeadActions__Cart i {
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  color: #FFFFFF;
+}
+
+.HeadActions__Cart:hover i {
+  color: #1DDECE;
+}
+
+.HeadActions__CartNumber {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #1F746D;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 13px;
+  right: -13px;
+}
+
+.HeadMobActions {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.HeadMobActions__User {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+}
+
+.HeadMobActions__User i {
+  color: #FFFFFF;
+}
+
+.HeadMobActions__UserImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.HeadMobActions__UserImg img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.HeadMobActions__UserImg p {
+  color: #FFFFFF;
+}
+
+.HeadMobActions__Cart {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 15px;
+  position: relative;
+}
+
+.HeadMobActions__Cart i {
+  color: #FFFFFF;
+}
+
+.HeadMobActions__CartNumber {
+  position: absolute;
+  background-color: #1F746D;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 6px;
+  right: 2px;
+}
+
+.HeadMobActions__CartNumber p {
+  color: #FFFFFF;
+}
+
+.NavMobile {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 60px;
+  -webkit-box-shadow: 4px 4px 10px 0.5px rgba(143, 143, 143, 0.25);
+          box-shadow: 4px 4px 10px 0.5px rgba(143, 143, 143, 0.25);
+}
+
+.NavMobile__Social {
+  width: 100%;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.NavMobile__Social a {
+  margin-right: 25px;
+}
+
+.NavMobile__Social i {
+  color: #FFFFFF;
+}
+
+.NavMobile__Social a:last-child {
+  margin-right: 0;
+}
+
+.NavMobile__List {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.NavMobile__Item {
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.NavMobile__Item.is-active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.NavMobile__Item.is-grid {
+  width: 100%;
+  height: 50px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 60px;
+      grid-template-columns: 1fr 60px;
+  position: relative;
+  padding: 0;
+}
+
+.NavMobile__Item.is-grid .NBItemName {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.NavMobile__Item.is-grid .DropButton {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+
+.NavMobile__Item.is-grid .DropButton input[type="checkbox"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+}
+
+.NavMobile__Item.is-grid .DropButton i {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  color: #FFFFFF;
+}
+
+.NavMobile__Item.is-grid .DropButton input[type="checkbox"]:checked ~ i {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.NavMobile .DropBox {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -webkit-transition: 1s all ease;
+  transition: 1s all ease;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.NavMobile .DropBox__Item {
+  width: 100%;
+  padding: 10px 20px 10px 40px;
+}
+
+.NavButton {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  position: relative;
+}
+
+.NavButton .NBcheck, .NavButton .NBbars, .NavButton .NBclose {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.NavButton .NBcheck {
+  z-index: 2;
+  opacity: 0;
+}
+
+.NavButton .NBbars, .NavButton .NBclose {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.NavButton .NBbars i, .NavButton .NBclose i {
+  color: #FFFFFF;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.NavButton .NBclose i {
+  opacity: 0;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.NavButton .NBbars i {
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.NavButton .NBcheck:checked ~ .NBbars i {
+  opacity: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.NavButton .NBcheck:checked ~ .NBclose i {
+  opacity: 1;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.NavButton .NBcontainer {
+  position: absolute;
+  width: 300px;
+  height: calc( 100vh - 50px);
+  background-color: #23242A;
+  top: 100%;
+  right: -320px;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.NavButton .NBcheck:checked ~ .NBcontainer {
+  right: -15px;
+}
+
+@media screen and (min-width: 500px) {
+  .NavButton .NBcontainer {
+    right: -335px;
+  }
+  .NavButton .NBcheck:checked ~ .NBcontainer {
+    right: -30px;
+  }
+}
+
+#BgMobNav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 /* Organisms */
 .StaticHead {
   display: none;
@@ -491,6 +961,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 .Head {
   height: 70px;
   background-color: #23242A;
+  display: none;
 }
 
 .Head .l-contain {
@@ -506,5 +977,157 @@ input:focus, textarea:focus, select:focus, button:focus {
           align-items: center;
 }
 
+@media screen and (min-width: 1000px) {
+  .Head {
+    display: block;
+  }
+}
+
+.HeadMobile {
+  height: 50px;
+  background-color: #23242A;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+}
+
+.HeadMobile .l-contain {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.HeadMobile__Logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.HeadMobile__Logo img {
+  height: 35px;
+}
+
+@media screen and (min-width: 1000px) {
+  .HeadMobile {
+    display: none;
+  }
+}
+
+.Slider {
+  width: 100%;
+  height: calc( (100vw * 500) / 1440);
+  position: relative;
+}
+
+.Slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: .5s all;
+  transition: .5s all;
+}
+
+.Slider__Left, .Slider__Right {
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.Slider__Left i, .Slider__Right i {
+  color: #FFFFFF;
+  text-shadow: 0px 0px 7px black;
+}
+
+.Slider__Left {
+  left: 0;
+}
+
+.Slider__Right {
+  right: 0;
+}
+
+.Slider__ControlBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Slider__Controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Slider__Control {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 0 0 5px 1.5px black;
+          box-shadow: 0 0 5px 1.5px black;
+  margin-right: 10px;
+  -webkit-transition: .5s all;
+  transition: .5s all;
+  cursor: pointer;
+}
+
+.Slider__Control.is-active {
+  background-color: #1F746D;
+}
+
+@media screen and (min-width: 500px) {
+  .Slider__Left, .Slider__Right {
+    width: 70px;
+  }
+}
+
 /* Pages */
+.HomeView {
+  padding-top: 50px;
+}
+
+@media screen and (min-width: 1000px) {
+  .HomeView {
+    padding-top: 0;
+  }
+}
 /*# sourceMappingURL=index.css.map */

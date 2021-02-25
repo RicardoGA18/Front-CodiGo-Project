@@ -1,0 +1,90 @@
+.NavMobile{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 60px;
+  box-shadow: $Shadow-Container;
+  &__Social{
+    width: 100%;
+    height: 60px;
+    @include flexCenter;
+    border-bottom: 2px solid $Hover-Light;
+    a{
+      margin-right: 25px;
+    }
+    i{
+      color: $Light;
+    }
+    a:last-child{
+      margin-right: 0;
+    }
+  }
+  &__List{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  &__Item{
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  &__Item.is-active{
+    background-color: $Hover-Light;
+  }
+  &__Item.is-grid{
+    width: 100%;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr 60px;
+    position: relative;
+    padding: 0;
+    .NBItemName{
+      width: 100%;
+      height: 100%;
+      padding: 0 0 0 20px;
+      display: flex;
+      align-items: center;
+    }
+    .DropButton{
+      position: relative;
+      height: 100%;
+      width: 100%;
+      @include flexCenter;
+      z-index: 2;
+      input[type="checkbox"]{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        opacity: 0;
+      }
+      i{
+        transform: rotate(0deg);
+        transition: .3s all;
+        color: $Light;
+      }
+      input[type="checkbox"]:checked ~ i{
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .DropBox{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    transition: 1s all ease;
+    max-height: 0;
+    overflow: hidden;
+    &__Item{
+      width: 100%;
+      padding: 10px 20px 10px 40px;
+    }
+  }
+}

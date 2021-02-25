@@ -4,7 +4,7 @@ import StaticSocial from '../molecules/StaticSocial'
 
 const StaticHead = () => {
   return (
-    <div className="StaticHead l-container">
+    <div className="StaticHead l-container" id="StaticHead">
       <div className="l-contain">
         <StaticInfo></StaticInfo>
         <StaticSocial></StaticSocial>

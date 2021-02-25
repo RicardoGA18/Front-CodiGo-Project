@@ -1,0 +1,8 @@
+.HomeView{
+  padding-top: 50px;
+}
+@include mq($Desktop){
+  .HomeView{
+    padding-top: 0;
+  }
+}

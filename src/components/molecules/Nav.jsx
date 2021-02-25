@@ -2,7 +2,15 @@ import React from 'react'
 import logo from '../../assets/logo.png'
 import {Link} from 'react-router-dom'
 
-const Nav = ({categories}) => {
+const Nav = ({categories,view}) => {
+  const setClass = (actualView) => {
+    if(actualView == view){
+      return 'Nav__Item is-active'
+    }else{
+      return 'Nav__Item'
+    }
+  }
+
   const setCategories = () => {
     return categories.map((category) => {
       return (
@@ -22,10 +30,10 @@ const Nav = ({categories}) => {
       <Link to="/" className="Nav__Logo">
         <img src={logo} alt="Logo Computer Store"/>
       </Link>
-      <div className="Nav__Item">
+      <Link to="/" className={setClass('home')}>
         <p className="Title-4">INICIO</p>
-      </div>
-      <div className="Nav__Item">
+      </Link>
+      <div className={setClass('about')}>
         <p className="Title-4">NOSOTROS</p>
         <div className="DropBox">
           <Link
@@ -60,17 +68,17 @@ const Nav = ({categories}) => {
           </Link>
         </div>
       </div>
-      <div className="Nav__Item">
-        <Link to="/productos">
+      <div className={setClass('products')} style={{ padding: '0' }}>
+        <Link to="/productos" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding:'0 15px' }}>
           <p className="Title-4">PRODUCTOS</p>
         </Link>
         <div className="DropBox">
           {setCategories()}
         </div>
       </div>
-      <div className="Nav__Item">
+      <Link to="/contacto" className={setClass('contact')}>
         <p className="Title-4">CONTACTO</p>
-      </div>
+      </Link>
     </div>
   )
 }

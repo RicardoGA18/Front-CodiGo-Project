@@ -1,0 +1,76 @@
+.NavButton{
+  height: 100%;
+  @include flexCenter;
+  width: 30px;
+  position: relative;
+  .NBcheck,.NBbars,.NBclose{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .NBcheck{
+    z-index: 2;
+    opacity: 0;
+  }
+  .NBbars,.NBclose{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    i{
+      color: $Light;
+      transition: .3s all;
+    }
+  }
+  .NBclose i{
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  .NBbars i{
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  .NBcheck:checked ~ .NBbars i{
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+  .NBcheck:checked ~ .NBclose i{
+    opacity: 1;
+    transform: rotate(180deg);
+  }
+  .NBcontainer{
+    position: absolute;
+    width: 300px;
+    height: calc( 100vh - 50px );
+    background-color: $Bg-Container;
+    top: 100%;
+    right: -320px;
+    transition: .3s all;
+  }
+  .NBcheck:checked ~ .NBcontainer{
+    right: -15px;
+  }
+}
+
+@include mq($Tablet){
+  .NavButton{
+    .NBcontainer{
+      right: -335px;
+    }
+    .NBcheck:checked ~ .NBcontainer{
+      right: -30px;
+    } 
+  }
+}
+
+#BgMobNav{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background-color: rgba(0,0,0,.8);
+}

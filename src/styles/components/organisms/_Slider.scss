@@ -1,0 +1,63 @@
+.Slider{
+  width: 100%;
+  height: calc( (100vw * 500) / 1440 );
+  position: relative;
+  img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: .5s all;
+  }
+  &__Left,&__Right{
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    @include flexCenter;
+    cursor: pointer;
+    i{
+      color: $Light;
+      text-shadow: 0px 0px 7px black;
+    }
+  }
+  &__Left{
+    left: 0;
+  }
+  &__Right{
+    right: 0;
+  }
+  &__ControlBox{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    @include flexCenter;
+  }
+  &__Controls{
+    display: flex;
+  }
+  &__Control{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $Light;
+    box-shadow: 0 0 5px 1.5px black;
+    margin-right: 10px;
+    transition: .5s all;
+    cursor: pointer;
+  }
+  &__Control.is-active{
+    background-color: $Blue-Hover;
+  }
+}
+@include mq($Tablet){
+  .Slider{
+    &__Left,&__Right{
+      width: 70px;
+    }
+  }
+}

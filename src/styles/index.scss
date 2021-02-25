@@ -8,6 +8,7 @@
 
 /* Generic and Elements */
 @import './global/Base';
+@import './global/Scroll';
 
 /* Objects */
 @import './global/Layout';
@@ -24,10 +25,15 @@
 @import './components/molecules/StaticSocial';
 @import './components/molecules/Nav';
 @import './components/molecules/HeadActions';
+@import './components/molecules/HeadMobActions';
+@import './components/molecules/NavMobile';
+@import './components/molecules/NavButton';
 
 /* Organisms */
 @import './components/organisms/StaticHead';
 @import './components//organisms//Head';
+@import './components/organisms/HeadMobile';
+@import './components/organisms/Slider';
 
 /* Pages */
 @import './components/pages/HomeView';

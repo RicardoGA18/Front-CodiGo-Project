@@ -1,0 +1,26 @@
+.HeadMobile{
+  height: 50px;
+  background-color: $Bg-Container;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  .l-contain{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__Logo{
+    @include flexCenter;
+    img{
+      height: 35px;
+    }
+  }
+}
+
+@include mq($Desktop){
+  .HeadMobile{
+    display: none;
+  }
+}
