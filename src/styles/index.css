@@ -120,6 +120,21 @@ input:focus, textarea:focus, select:focus, button:focus {
   }
 }
 
+/* Grid */
+.l-gridAutoFit {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(226px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(226px, 1fr));
+  grid-gap: 15px;
+}
+
+@media screen and (min-width: 1000px) {
+  .l-gridAutoFit {
+    grid-gap: 20px;
+  }
+}
+
 /* Normal */
 .Title-1 {
   font-weight: 400;
@@ -933,6 +948,77 @@ input:focus, textarea:focus, select:focus, button:focus {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.Subtitle {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Subtitle__Name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Subtitle__Name .STbar {
+  width: 5px;
+  height: 30px;
+  background-color: #FFFFFF;
+  margin-right: 5px;
+}
+
+.Subtitle__SeeAll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Subtitle__SeeAll i {
+  color: #FFFFFF;
+  margin-left: 5px;
+}
+
+@media screen and (min-width: 500px) {
+  .Subtitle__Name h2 {
+    font-size: 24px;
+  }
+  .Subtitle__Name .STbar {
+    height: 40px;
+    margin-right: 15px;
+  }
+  .Subtitle__SeeAll p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .Subtitle__Name h2 {
+    font-size: 36px;
+  }
+  .Subtitle__SeeAll p {
+    font-size: 24px;
+  }
+}
+
 /* Organisms */
 .StaticHead {
   display: none;
@@ -962,6 +1048,7 @@ input:focus, textarea:focus, select:focus, button:focus {
   height: 70px;
   background-color: #23242A;
   display: none;
+  z-index: 2;
 }
 
 .Head .l-contain {
@@ -1031,6 +1118,7 @@ input:focus, textarea:focus, select:focus, button:focus {
   width: 100%;
   height: calc( (100vw * 500) / 1440);
   position: relative;
+  z-index: 1;
 }
 
 .Slider img {
@@ -1117,6 +1205,36 @@ input:focus, textarea:focus, select:focus, button:focus {
 @media screen and (min-width: 500px) {
   .Slider__Left, .Slider__Right {
     width: 70px;
+  }
+}
+
+.CategoryList {
+  margin-top: 20px;
+}
+
+.CategoryList .l-contain {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-row-gap: 20px;
+}
+
+.CategoryList .l-contain .CategoryCard {
+  width: 100%;
+  height: 250px;
+  background-color: blue;
+}
+
+@media screen and (min-width: 768px) {
+  .CategoryList .l-contain .CategoryCard:last-child {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1044px) {
+  .CategoryList .l-contain .CategoryCard:last-child {
+    display: block;
   }
 }
 

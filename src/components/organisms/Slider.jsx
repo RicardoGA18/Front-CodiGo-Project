@@ -1,9 +1,13 @@
 import React, {useEffect, useState} from 'react'
-import setSliderMq from '../../utils/setSliderMq'
+import setIconMq from '../../utils/setIconMq'
+import { v4 as uuidv4 } from 'uuid'
 /* TEMP */
 import sliders from '../../utils/temp/JsonSlider'
 
 const Slider = () => {
+  const rightIconId = uuidv4()
+  const leftIconId = uuidv4()
+
   const setSlides = () => {
     return sliders.map((slide,_id)=>{
       return (
@@ -13,7 +17,20 @@ const Slider = () => {
   }
 
   useEffect(() => {
-    setSliderMq()
+    const rightIcon = document.querySelector(`[data-icon="${rightIconId}"]`)
+    const leftIcon = document.querySelector(`[data-icon="${leftIconId}"]`)
+    setIconMq(
+      rightIcon,
+      'fas fa-angle-right fa-2x',
+      'fas fa-angle-right fa-3x',
+      'fas fa-angle-right fa-4x'
+    )
+    setIconMq(
+      leftIcon,
+      'fas fa-angle-left fa-2x',
+      'fas fa-angle-left fa-3x',
+      'fas fa-angle-left fa-4x'
+    )
   },[])
 
   const [slide,setSlide] = useState(0)
@@ -75,10 +92,10 @@ const Slider = () => {
     <div className="Slider" >
       {setSlides()}
       <div className="Slider__Left" onClick={leftSlider}>
-        <i className="fas fa-angle-left fa-2x"></i>
+        <i className="fas fa-angle-left fa-2x" data-icon={leftIconId}></i>
       </div>
       <div className="Slider__Right" onClick={rightSlider}>
-        <i className="fas fa-angle-right fa-2x"></i>
+        <i className="fas fa-angle-right fa-2x" data-icon={rightIconId}></i>
       </div>
       <div className="Slider__ControlBox">
         <div className="Slider__Controls">

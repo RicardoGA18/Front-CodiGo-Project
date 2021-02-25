@@ -23,3 +23,16 @@
     padding: $Pd-Desktop;
   }
 }
+
+/* Grid */
+.l-gridAutoFit{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(226px,1fr));
+  grid-gap: 15px;
+}
+
+@include mq($Desktop){
+  .l-gridAutoFit{
+    grid-gap: 20px;
+  }
+}

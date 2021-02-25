@@ -2,6 +2,7 @@
   width: 100%;
   height: calc( (100vw * 500) / 1440 );
   position: relative;
+  z-index: 1;
   img{
     position: absolute;
     width: 100%;

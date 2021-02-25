@@ -2,6 +2,7 @@
   height: 70px;
   background-color: $Bg-Container;
   display: none;
+  z-index: 2;
   .l-contain{
     height: 100%;
     display: flex;

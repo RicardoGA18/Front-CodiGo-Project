@@ -28,12 +28,14 @@
 @import './components/molecules/HeadMobActions';
 @import './components/molecules/NavMobile';
 @import './components/molecules/NavButton';
+@import './components/molecules/Subtitle';
 
 /* Organisms */
 @import './components/organisms/StaticHead';
 @import './components//organisms//Head';
 @import './components/organisms/HeadMobile';
 @import './components/organisms/Slider';
+@import './components/organisms/CategoryList';
 
 /* Pages */
 @import './components/pages/HomeView';
