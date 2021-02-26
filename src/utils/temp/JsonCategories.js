@@ -1,62 +1,52 @@
 export default [
   {
-    _id: 1,
-    name: "PC's armadas",
-    img: '/temp/PCS-MARCA.jpg',
-  },
-  {
-    _id: 2,
+    id: 'chgGZzLdrxBN9KQIgmdT',
     name: 'Laptops',
-    img: '/temp/laptop.jpg'
+    img: 'https://firebasestorage.googleapis.com/v0/b/computer-store-a1f8e.appspot.com/o/categories%2Flaptop.jpg?alt=media&token=4f373945-68e6-4a63-bc6f-2d6e89f941c2'
   },
   {
-    _id: 3,
+    id: 'tDNwHwh2FM3jaAX8tx6q',
     name: 'Monitores',
-    img: '/temp/monitor.jpg'
+    img: 'https://firebasestorage.googleapis.com/v0/b/computer-store-a1f8e.appspot.com/o/categories%2Fmonitor.jpg?alt=media&token=da2b03ad-b010-4fde-b25f-4410a2ad0806'
   },
   {
-    _id: 4,
+    id: 'BLObzh5LogKPQnmC5bt1',
     name: 'Almacenamiento',
-    img: '/temp/disco-duro-interno.jpg'
+    img: 'https://firebasestorage.googleapis.com/v0/b/computer-store-a1f8e.appspot.com/o/categories%2Fdisco-duro-interno.jpg?alt=media&token=4eb71c12-be62-45e1-81e1-fe2e71470846'
   },
   {
-    _id: 5,
+    id: 'BmmuZLgtZNpwK4ig7McA',
     name: 'Memoria RAM',
-    img: '/temp/memorias-ram.jpg'
+    img: 'https://firebasestorage.googleapis.com/v0/b/computer-store-a1f8e.appspot.com/o/categories%2Fmemorias-ram.jpg?alt=media&token=f4d7ac16-8d02-47b4-9232-ee5104b6d267'
   },
   {
-    _id: 6,
+    id: 'XkP6IMwKkZQaezGYipcs',
     name: 'Mouses y Accesorios',
-    img: '/temp/Mouses-accesorios.jpg'
+    img: 'https://firebasestorage.googleapis.com/v0/b/computer-store-a1f8e.appspot.com/o/categories%2FMouses-accesorios.jpg?alt=media&token=b94ec060-8499-4fe7-b50e-d2481a8bea74'
   },
   {
-    _id: 7,
-    name: 'Parlantes',
-    img: '/temp/parlante.jpg'
-  },
-  {
-    _id: 8,
+    id: 'g2A5uSiYyAw866tX6TFZ',
     name: 'Placas madre',
-    img: '/temp/placas-madre.jpg'
+    img: 'https://firebasestorage.googleapis.com/v0/b/computer-store-a1f8e.appspot.com/o/categories%2Fplacas-madre.jpg?alt=media&token=87f8ff6d-fe97-4c58-b0a6-d4a2f552284c'
   },
   {
-    _id: 9,
+    id: 'QUrqvy8JhlL504asHdYn',
     name: 'CPU',
-    img: '/temp/procesador.jpg'
+    img: 'https://firebasestorage.googleapis.com/v0/b/computer-store-a1f8e.appspot.com/o/categories%2Fprocesador.jpg?alt=media&token=41bdae52-0888-4e98-9330-3e430cd9cb08'
   },
   {
-    _id: 10,
+    id: 'xb01cEk6aLUAig0m31Kc',
     name: 'Tarjetas de video',
-    img: '/temp/tarjeta-de-video.jpg'
+    img: 'https://firebasestorage.googleapis.com/v0/b/computer-store-a1f8e.appspot.com/o/categories%2Ftarjeta-de-video.jpg?alt=media&token=71db6441-54e1-4192-a719-a4f95424a19a'
   },
   {
-    _id: 11,
+    id: 'taG8PvNqBygqS9kALRjt',
     name: 'Teclados',
-    img: '/temp/teclados.jpg'
+    img: 'https://firebasestorage.googleapis.com/v0/b/computer-store-a1f8e.appspot.com/o/categories%2Fteclados.jpg?alt=media&token=91ea63b2-cce4-4410-96b6-dcadff6eed2a'
   },
   {
-    _id: 12,
+    id: 'yGyJNAvwNziPmMYzD2FV',
     name: 'Cases y fuentes',
-    img: '/temp/cases-fuente.jpg'
+    img: 'https://firebasestorage.googleapis.com/v0/b/computer-store-a1f8e.appspot.com/o/categories%2Fcases-fuente.jpg?alt=media&token=d2c38117-b5c6-4d60-8da3-f2ef5cfdd8f8'
   },
 ]

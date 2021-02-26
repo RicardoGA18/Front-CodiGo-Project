@@ -6,12 +6,8 @@ import logo from '../../assets/logo.png'
 import HeadMobActions from '../molecules/HeadMobActions'
 import setHeadObserver from '../../utils/setHeadObserver'
 import setNavBg from '../../utils/setNavBg'
-/* TEMP */
-import categories from '../../utils/temp/JsonCategories'
-import user from '../../utils/temp/JsonUser'
-import cart from '../../utils/temp/JsonCart'
 
-const Head = ({view}) => {
+const Head = ({view,categories,user,cart}) => {
   useEffect(() => {
     setHeadObserver()
     setNavBg()

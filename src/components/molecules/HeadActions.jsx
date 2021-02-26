@@ -13,7 +13,7 @@ const HeadActions = ({user,cart}) => {
   const setUser = () => {
     if(user){
       return(
-        <Link to={`/perfil/${user._id}`} className="HeadActions__User">
+        <Link to={`/perfil/${user.id}`} className="HeadActions__User">
           <div className="HeadActions__UserImg">
             { user.img 
               ? (<img src={user.img} alt={`Foto de perfil de ${user.name}`}/>)

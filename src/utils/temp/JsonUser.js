@@ -1,5 +1,5 @@
 export default {
-  _id: 1,
+  id: 1,
   name: 'Ricardo',
   lastName: 'Gambini',
   username: 'Ricardo Gambini',

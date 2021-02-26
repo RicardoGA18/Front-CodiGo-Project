@@ -15,9 +15,9 @@ const Nav = ({categories,view}) => {
     return categories.map((category) => {
       return (
         <Link
-          key={category._id}
+          key={category.id}
           className="DropBox__Item"
-          to={`/productos/${category._id}`}
+          to={`/productos/${category.id}`}
         >
           <p className="Small">{category.name}</p>
         </Link>

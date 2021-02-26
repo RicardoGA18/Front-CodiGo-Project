@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import setIconMq from '../../utils/setIconMq'
 import { v4 as uuidv4 } from 'uuid'
-/* TEMP */
-import sliders from '../../utils/temp/JsonSlider'
 
-const Slider = () => {
+const Slider = ({sliders}) => {
   const rightIconId = uuidv4()
   const leftIconId = uuidv4()
 
@@ -62,10 +60,14 @@ const Slider = () => {
   useEffect(()=>{
     const images = Array.from(document.querySelectorAll('.Slider img'))
     images.forEach(image => {
-      image.style.opacity = '0'
+      if(image){
+        image.style.opacity = '0'
+      }
     })
-    images[slide].style.opacity = '1'
-  },[slide])
+    if(images[slide]){
+      images[slide].style.opacity = '1'
+    }
+  },[slide,sliders])
 
   const setClassControl = (controlNum) => {
     if(controlNum === slide){

@@ -11,7 +11,7 @@ const NavMobile = ({categories,view}) => {
   const setCategories = () => {
     return categories.map(category => {
       return (
-        <Link className="DropBox__Item" to={`/productos/${category._id}`} key={category._id}>
+        <Link className="DropBox__Item" to={`/productos/${category.id}`} key={category.id}>
             <p className="Paragraph">{category.name}</p>
         </Link>
       )
