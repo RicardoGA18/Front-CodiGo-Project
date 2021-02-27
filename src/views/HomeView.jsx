@@ -14,22 +14,29 @@ import Brands from '../components/organisms/Brands'
 import Advantage from '../components/organisms/Advantage'
 import Footer from '../components/organisms/Footer'
 
+// Utils
+import {openModalCharge,closeModalCharge,errorAlert} from '../utils/Alerts'
 
 // Temp
-//import categories from '../utils/temp/JsonCategories'
 import user from '../utils/temp/JsonUser'
 import cart from '../utils/temp/JsonCart'
-//import sliders from '../utils/temp/JsonSlider'
 
 const HomeView = () => {
-  const {getSliders,getCategories,categories,sliders} = useContext(AppContext)
+  const {getSliders,getCategories,categories,sliders,error,cleanError} = useContext(AppContext)
 
   const initHome = async () => {
-    console.log('Cargando...')
+    openModalCharge()
     await getSliders()
     await getCategories()
-    console.log('Home Cargado')
+    closeModalCharge()
   }
+
+  useEffect(async () => {
+    if(error){
+      await errorAlert(error)
+      cleanError()
+    }
+  }, [error])
 
   useEffect(() => {
     initHome()

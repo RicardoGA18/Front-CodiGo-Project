@@ -197,6 +197,29 @@ input:focus, textarea:focus, select:focus, button:focus {
   font-size: 12px;
 }
 
+.ModalCharge {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ModalCharge i {
+  color: #FFFFFF;
+}
+
 /* Components */
 /* Atoms */
 .Button-Primary {
@@ -1424,15 +1447,18 @@ input:focus, textarea:focus, select:focus, button:focus {
 
 .Footer .l-contain {
   padding: 35px 0;
+  width: 100%;
+  height: auto;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  grid-row-gap: 20px;
+  grid-gap: 20px;
 }
 
 .Footer__List {
   padding: 0 10px;
+  width: 100%;
 }
 
 .Footer__ListName {
@@ -1445,16 +1471,32 @@ input:focus, textarea:focus, select:focus, button:focus {
   padding: 5px 0;
 }
 
+.Footer a .Footer__Item {
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.Footer a .Footer__Item:hover {
+  color: #1DDECE;
+}
+
 @media screen and (min-width: 500px) {
   .Footer .l-contain {
-    -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
   .Footer__ListName {
     text-align: left;
   }
   .Footer__Item {
     text-align: left;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .Footer .l-contain {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 

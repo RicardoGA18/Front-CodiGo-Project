@@ -4,7 +4,7 @@ import AppReducer from './AppReducer'
 import AppContext from './AppContext'
 
 // Types
-import {GET_CATEGORIES,GET_SLIDERS} from '../types'
+import {GET_CATEGORIES,GET_SLIDERS,SET_ERROR} from '../types'
 
 // Fetch Functions
 import fetchSliders from '../utils/fetchSliders'
@@ -14,25 +14,48 @@ const AppState = (props) => {
   const INITIAL_STATE = {
     categories: [],
     sliders: [],
+    error: null
   }
 
   const [state, dispatch] = useReducer(AppReducer, INITIAL_STATE)
-  
+
   // CATEGORIES
   const getCategories = async () => {
-    let categories = await fetchCategories()
-    dispatch({
-      type: GET_CATEGORIES,
-      payload: categories
-    })
+    try{
+      let categories = await fetchCategories()
+      dispatch({
+        type: GET_CATEGORIES,
+        payload: categories
+      })
+    }catch(error){
+      dispatch({
+        type: SET_ERROR,
+        payload: error.message
+      })
+    }
   }
-  
+
   // SLIDERS
   const getSliders = async () => {
-    let sliders = await fetchSliders()
+    try{
+      let sliders = await fetchSliders()
+      dispatch({
+        type: GET_SLIDERS,
+        payload: sliders
+      })
+    }catch(error){
+      dispatch({
+        type: SET_ERROR,
+        payload: error.message
+      })
+    }
+  }
+
+  // ERROR
+  const cleanError = () => {
     dispatch({
-      type: GET_SLIDERS,
-      payload: sliders
+      type: SET_ERROR,
+      payload: null
     })
   }
 
@@ -40,8 +63,10 @@ const AppState = (props) => {
     <AppContext.Provider value={{ 
       categories: state.categories,
       sliders: state.sliders,
+      error: state.error,
       getCategories,
       getSliders,
+      cleanError,
     }}>
       {props.children}
     </AppContext.Provider>

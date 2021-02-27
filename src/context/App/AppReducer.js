@@ -1,4 +1,4 @@
-import {GET_CATEGORIES,GET_SLIDERS} from '../types'
+import {GET_CATEGORIES,GET_SLIDERS,SET_ERROR} from '../types'
 
 export default (state,action) => {
   const {payload , type} = action
@@ -12,6 +12,11 @@ export default (state,action) => {
       return {
         ...state,
         sliders: payload
+      }
+    case SET_ERROR:
+      return {
+        ...state,
+        error: payload
       }
     default:
       return state
