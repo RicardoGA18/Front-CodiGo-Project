@@ -1,9 +1,14 @@
 import React from 'react'
+import LogNav from '../components/organisms/LogNav'
+import Login from '../components/organisms/Login'
 
 const LoginView = () => {
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="LoginView">
+      <LogNav />
+      <div className="LoginView__Form">
+        <Login />
+      </div>
     </div>
   )
 }

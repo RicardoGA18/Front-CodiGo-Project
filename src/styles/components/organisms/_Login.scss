@@ -1,0 +1,53 @@
+.Login{
+    width: 400px;
+    background-color: $Bg-Container;
+    &__Contain{
+        padding: 20px;
+        display: grid;
+        grid-row-gap: 20px;
+    }
+    &__Break{
+        width: 100%;
+        @include flexCenter;
+        position: relative;
+        hr{
+            position: absolute;
+            height: 1px;
+            border: none;
+            background-color: $Light;
+            width: 100%;
+            left: 0;
+            top: calc(50% - 1px);
+        }
+        .Title-3-bold{
+            position: relative;
+            z-index: 2;
+            @include flexCenter;
+            width: 25px;
+            height: 25px;
+            background-color: $Bg-Container;
+        }
+    }
+    &__Form{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+    }
+    &__Remember{
+        width: 100%;
+        @include flexCenter;
+        p{
+            color: $LightBlue;
+        }
+    }
+    &__Footer{
+        padding: 10px 20px 15px;
+        background-color: $Hover-Light;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px;
+        p{
+            text-align: center;
+        }
+    }
+}

@@ -1500,6 +1500,116 @@ input:focus, textarea:focus, select:focus, button:focus {
   }
 }
 
+.LogNav {
+  height: 70px;
+  background-color: #23242A;
+}
+
+.LogNav .l-contain {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.Login {
+  width: 400px;
+  background-color: #23242A;
+}
+
+.Login__Contain {
+  padding: 20px;
+  display: -ms-grid;
+  display: grid;
+  grid-row-gap: 20px;
+}
+
+.Login__Break {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.Login__Break hr {
+  position: absolute;
+  height: 1px;
+  border: none;
+  background-color: #FFFFFF;
+  width: 100%;
+  left: 0;
+  top: calc(50% - 1px);
+}
+
+.Login__Break .Title-3-bold {
+  position: relative;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 25px;
+  height: 25px;
+  background-color: #23242A;
+}
+
+.Login__Form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-row-gap: 20px;
+}
+
+.Login__Remember {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Login__Remember p {
+  color: #1DDECE;
+}
+
+.Login__Footer {
+  padding: 10px 20px 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-row-gap: 10px;
+}
+
+.Login__Footer p {
+  text-align: center;
+}
+
 /* Pages */
 .HomeView {
   padding-top: 50px;
@@ -1518,5 +1628,20 @@ input:focus, textarea:focus, select:focus, button:focus {
   .HomeView {
     padding-top: 0;
   }
+}
+
+.LoginView__Form {
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=index.css.map */
