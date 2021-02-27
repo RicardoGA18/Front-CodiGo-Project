@@ -24,7 +24,7 @@ function App() {
             <Route exact path="/recuperar-contrasenia" component={RecoverView} />
             <Route exact path="/productos" component={CategoriesView} />
             <Route exact path="/productos/:id" component={CategoryView} />
-            <Route exact path="/productos/:id/:idProduct" component={ProductView} />
+            <Route exact path="/producto/:id" component={ProductView} />
             <Route exact path="/nosotros/:info" component={AboutView} />
             <Route exact path="/probe" component={Probe} />
           </Switch>

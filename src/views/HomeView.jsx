@@ -13,6 +13,7 @@ import CategoryList from '../components/organisms/CategoryList'
 import Brands from '../components/organisms/Brands'
 import Advantage from '../components/organisms/Advantage'
 import Footer from '../components/organisms/Footer'
+import ProductList from '../components/organisms/ProductList'
 
 // Utils
 import {openModalCharge,closeModalCharge,errorAlert} from '../utils/Alerts'
@@ -57,6 +58,9 @@ const HomeView = () => {
       <div className="HomeView__Content">
         <CategoryList
           categories={categories}
+        />
+        <ProductList 
+          listName="OFERTAS"
         />
         <Brands />
         <Advantage />

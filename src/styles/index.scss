@@ -32,10 +32,11 @@
 @import './components/molecules/Subtitle';
 @import './components/molecules/CategoryCard';
 @import './components/molecules/StaticTitle';
+@import './components/molecules/ProductCard';
 
 /* Organisms */
 @import './components/organisms/StaticHead';
-@import './components//organisms/Head';
+@import './components/organisms/Head';
 @import './components/organisms/HeadMobile';
 @import './components/organisms/Slider';
 @import './components/organisms/CategoryList';
@@ -44,6 +45,7 @@
 @import './components/organisms/Footer';
 @import './components/organisms/LogNav';
 @import './components/organisms/Login';
+@import './components/organisms/ProductList';
 
 /* Pages */
 @import './components/pages/HomeView';
