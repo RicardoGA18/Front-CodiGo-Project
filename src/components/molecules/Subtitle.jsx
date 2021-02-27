@@ -12,7 +12,7 @@ const Subtitle = ({seeAll,name}) => {
       iconSeeAll,
       'fas fa-angle-right',
       'fas fa-angle-right fa-2x',
-      'fas fa-angle-right fa-3x',
+      'fas fa-angle-right fa-2x',
     )
   }, [])
 

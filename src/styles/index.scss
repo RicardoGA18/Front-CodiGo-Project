@@ -29,13 +29,18 @@
 @import './components/molecules/NavMobile';
 @import './components/molecules/NavButton';
 @import './components/molecules/Subtitle';
+@import './components/molecules/CategoryCard';
+@import './components/molecules/StaticTitle';
 
 /* Organisms */
 @import './components/organisms/StaticHead';
-@import './components//organisms//Head';
+@import './components//organisms/Head';
 @import './components/organisms/HeadMobile';
 @import './components/organisms/Slider';
 @import './components/organisms/CategoryList';
+@import './components/organisms/Brands';
+@import './components/organisms/Advantage';
+@import './components/organisms/Footer';
 
 /* Pages */
 @import './components/pages/HomeView';

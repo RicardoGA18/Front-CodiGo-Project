@@ -1,0 +1,28 @@
+.CategoryCard{
+  width: 100%;
+  background-color: $Bg-Container;
+  border-radius: 15px;
+  padding: 10px 10px 0;
+  &__Img{
+    width: 100%;
+    border-radius: 15px;
+  }
+  &__Name{
+    width: 100%;
+    padding: 7px 0;
+    @include flexCenter;
+    p{
+      text-align: center;
+    }
+  }
+}
+
+@include mq($Desktop){
+  .CategoryCard{
+    &__Name{
+      p{
+        font-size: $xlg;
+      }
+    }
+  }
+}

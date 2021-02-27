@@ -1,0 +1,33 @@
+.Brands{
+  .l-contain{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+  }
+  &__Box{
+    width: 100%;
+    @include flexCenter;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+  }
+  &__Item{
+    padding: 15px 30px;
+  }
+}
+@include mq(452px){
+  .Brands{
+    &__Box{
+      flex-direction: row;
+    }
+  }
+}
+@include mq(825px){
+  .Brands{
+    &__Box{
+      justify-content: space-between;
+      max-width: 821px;
+      margin: 0 auto;
+    }
+  }
+}

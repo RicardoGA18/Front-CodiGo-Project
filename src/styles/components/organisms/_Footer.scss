@@ -1,0 +1,33 @@
+.Footer{
+  background-color: $Bg-Container;
+  .l-contain{
+    padding: 35px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+  }
+  &__List{
+    padding: 0 10px;
+  }
+  &__ListName{
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &__Item{
+    text-align: center;
+    padding: 5px 0;
+  }
+}
+@include mq($Tablet){
+  .Footer{
+    .l-contain{
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    }
+    &__ListName{
+      text-align: left;
+    }
+    &__Item{
+      text-align: left;
+    }
+  }
+}

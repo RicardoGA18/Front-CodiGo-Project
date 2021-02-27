@@ -10,6 +10,9 @@ import StaticHead from '../components/organisms/StaticHead'
 import Head from '../components/organisms/Head'
 import Slider from '../components/organisms/Slider'
 import CategoryList from '../components/organisms/CategoryList'
+import Brands from '../components/organisms/Brands'
+import Advantage from '../components/organisms/Advantage'
+import Footer from '../components/organisms/Footer'
 
 
 // Temp
@@ -38,15 +41,22 @@ const HomeView = () => {
       <Head
         view={'home'}
         categories={categories}
-        user={user} cart={cart}
+        user={user}
+        cart={cart}
       />
       <Slider
         sliders={sliders}
       />
       <div className="HomeView__Content">
-        <CategoryList></CategoryList>
+        <CategoryList
+          categories={categories}
+        />
+        <Brands />
+        <Advantage />
       </div>
-      <h1>Home</h1>
+      <Footer
+        categories={categories}
+      />
     </div>
   )
 }

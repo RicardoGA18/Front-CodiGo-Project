@@ -1,0 +1,47 @@
+.Advantage{
+  .l-contain{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 30px;
+  }
+  &__Box{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+  }
+  &__Item{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  &__ItemIcon{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  &__ItemText{
+    .Paragraph-bold{
+      margin-bottom: 5px;
+    }
+    p{
+      text-align: center;
+    }
+  }
+}
+@include mq($Tablet){
+  .Advantage{
+    &__Box{
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    &__Item{
+      grid-template-columns: 120px 1fr;
+    }
+    &__ItemText{
+      text-align: left;
+    }
+  }
+}

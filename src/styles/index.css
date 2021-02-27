@@ -1019,6 +1019,73 @@ input:focus, textarea:focus, select:focus, button:focus {
   }
 }
 
+.CategoryCard {
+  width: 100%;
+  background-color: #23242A;
+  border-radius: 15px;
+  padding: 10px 10px 0;
+}
+
+.CategoryCard__Img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.CategoryCard__Name {
+  width: 100%;
+  padding: 7px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.CategoryCard__Name p {
+  text-align: center;
+}
+
+@media screen and (min-width: 1000px) {
+  .CategoryCard__Name p {
+    font-size: 24px;
+  }
+}
+
+.StaticTitle {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.StaticTitle__Name {
+  text-align: center;
+}
+
+.StaticTitle__Bar {
+  width: 100px;
+  height: 5px;
+  background-color: #FFFFFF;
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 1000px) {
+  .StaticTitle__Name {
+    font-size: 36px;
+  }
+}
+
 /* Organisms */
 .StaticHead {
   display: none;
@@ -1167,7 +1234,7 @@ input:focus, textarea:focus, select:focus, button:focus {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 40px;
+  padding: 10px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1183,6 +1250,8 @@ input:focus, textarea:focus, select:focus, button:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .Slider__Control {
@@ -1192,10 +1261,15 @@ input:focus, textarea:focus, select:focus, button:focus {
   background-color: #FFFFFF;
   -webkit-box-shadow: 0 0 5px 1.5px black;
           box-shadow: 0 0 5px 1.5px black;
-  margin-right: 10px;
   -webkit-transition: .5s all;
   transition: .5s all;
   cursor: pointer;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.Slider__Control:last-child {
+  margin-right: 0;
 }
 
 .Slider__Control.is-active {
@@ -1220,12 +1294,6 @@ input:focus, textarea:focus, select:focus, button:focus {
   grid-row-gap: 20px;
 }
 
-.CategoryList .l-contain .CategoryCard {
-  width: 100%;
-  height: 250px;
-  background-color: blue;
-}
-
 @media screen and (min-width: 768px) {
   .CategoryList .l-contain .CategoryCard:last-child {
     display: none;
@@ -1238,9 +1306,170 @@ input:focus, textarea:focus, select:focus, button:focus {
   }
 }
 
+.Brands .l-contain {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+
+.Brands__Box {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Brands__Item {
+  padding: 15px 30px;
+}
+
+@media screen and (min-width: 452px) {
+  .Brands__Box {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 825px) {
+  .Brands__Box {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    max-width: 821px;
+    margin: 0 auto;
+  }
+}
+
+.Advantage .l-contain {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-row-gap: 30px;
+}
+
+.Advantage__Box {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 30px;
+}
+
+.Advantage__Item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 15px;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.Advantage__ItemIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.Advantage__ItemText .Paragraph-bold {
+  margin-bottom: 5px;
+}
+
+.Advantage__ItemText p {
+  text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+  .Advantage__Box {
+    -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+  .Advantage__Item {
+    -ms-grid-columns: 120px 1fr;
+        grid-template-columns: 120px 1fr;
+  }
+  .Advantage__ItemText {
+    text-align: left;
+  }
+}
+
+.Footer {
+  background-color: #23242A;
+}
+
+.Footer .l-contain {
+  padding: 35px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-row-gap: 20px;
+}
+
+.Footer__List {
+  padding: 0 10px;
+}
+
+.Footer__ListName {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.Footer__Item {
+  text-align: center;
+  padding: 5px 0;
+}
+
+@media screen and (min-width: 500px) {
+  .Footer .l-contain {
+    -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .Footer__ListName {
+    text-align: left;
+  }
+  .Footer__Item {
+    text-align: left;
+  }
+}
+
 /* Pages */
 .HomeView {
   padding-top: 50px;
+}
+
+.HomeView__Content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-row-gap: 20px;
+  margin-bottom: 30px;
 }
 
 @media screen and (min-width: 1000px) {

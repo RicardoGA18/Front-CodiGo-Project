@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from '../../assets/logo.png'
 import {Link} from 'react-router-dom'
 
 const Nav = ({categories,view}) => {
@@ -28,7 +27,7 @@ const Nav = ({categories,view}) => {
   return (
     <div className="Nav">
       <Link to="/" className="Nav__Logo">
-        <img src={logo} alt="Logo Computer Store"/>
+        <img src='https://firebasestorage.googleapis.com/v0/b/computer-store-a1f8e.appspot.com/o/assets%2Flogo.png?alt=media&token=9c70f14d-9f5f-437e-9f6f-8efaaf66c892' alt="Logo Computer Store"/>
       </Link>
       <Link to="/" className={setClass('home')}>
         <p className="Title-4">INICIO</p>

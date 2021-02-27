@@ -1,0 +1,22 @@
+.StaticTitle{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__Name{
+    text-align: center;
+  }
+  &__Bar{
+    width: 100px;
+    height: 5px;
+    background-color: $Light;
+    margin-top: 10px;
+  }
+}
+@include mq($Desktop){
+  .StaticTitle{
+    &__Name{
+      font-size: $xxlg;
+    }
+  }
+}
