@@ -1,0 +1,22 @@
+.ProductCard{
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 15px;
+  background-color: $Bg-Container;
+  grid-gap: 7px;
+  img{
+    width: 100%;
+    border-radius: 15px;
+  }
+  .Title-3-bold{
+    width: 100%;
+    text-align: center;
+  }
+  .Title-2-bold{
+    width: 100%;
+    text-align: center;
+    color: $Green;
+  }
+}

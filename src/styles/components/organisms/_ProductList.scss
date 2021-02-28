@@ -1,7 +1,27 @@
-.ProductList{
+.Productlist{
     .l-contain{
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 20px;
+    }
+}
+
+@include mq(768px){
+    .Productlist{
+        .l-contain{
+            .ProductCard:last-child{
+                display: none;
+            }
+        }
+    }
+}
+
+@include mq(1044px){
+    .Productlist{
+        .l-contain{
+            .ProductCard:last-child{
+                display: grid;
+            }
+        }
     }
 }

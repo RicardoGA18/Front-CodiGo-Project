@@ -11,7 +11,6 @@ const fetchSliders = async () => {
   } catch (error) {
     return new Error(error)
   }
-  
 }
 
 export default fetchSliders

@@ -1109,6 +1109,34 @@ input:focus, textarea:focus, select:focus, button:focus {
   }
 }
 
+.ProductCard {
+  width: 100%;
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  border-radius: 15px;
+  background-color: #23242A;
+  grid-gap: 7px;
+}
+
+.ProductCard img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.ProductCard .Title-3-bold {
+  width: 100%;
+  text-align: center;
+}
+
+.ProductCard .Title-2-bold {
+  width: 100%;
+  text-align: center;
+  color: #B7EEA1;
+}
+
 /* Organisms */
 .StaticHead {
   display: none;
@@ -1608,6 +1636,27 @@ input:focus, textarea:focus, select:focus, button:focus {
 
 .Login__Footer p {
   text-align: center;
+}
+
+.Productlist .l-contain {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .Productlist .l-contain .ProductCard:last-child {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1044px) {
+  .Productlist .l-contain .ProductCard:last-child {
+    display: -ms-grid;
+    display: grid;
+  }
 }
 
 /* Pages */

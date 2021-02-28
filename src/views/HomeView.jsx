@@ -21,6 +21,7 @@ import {openModalCharge,closeModalCharge,errorAlert} from '../utils/Alerts'
 // Temp
 import user from '../utils/temp/JsonUser'
 import cart from '../utils/temp/JsonCart'
+import offerProducts from '../utils/temp/JsonOffers'
 
 const HomeView = () => {
   const {getSliders,getCategories,categories,sliders,error,cleanError} = useContext(AppContext)
@@ -61,6 +62,8 @@ const HomeView = () => {
         />
         <ProductList 
           listName="OFERTAS"
+          seeAll="/ofertas"
+          products={offerProducts}
         />
         <Brands />
         <Advantage />
