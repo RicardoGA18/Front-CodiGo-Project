@@ -6,27 +6,27 @@ import {useContext} from 'react'
 import AppContext from '../context/App/AppContext'
 
 // Components
-import StaticHead from '../components/organisms/StaticHead'
-import Head from '../components/organisms/Head'
-import Slider from '../components/organisms/Slider'
+import PublicContainer from '../components/containers/PublicContainer'
 import CategoryList from '../components/organisms/CategoryList'
 import Brands from '../components/organisms/Brands'
 import Advantage from '../components/organisms/Advantage'
-import Footer from '../components/organisms/Footer'
 import ProductList from '../components/organisms/ProductList'
 
 // Utils
 import {openModalCharge,closeModalCharge,errorAlert} from '../utils/Alerts'
 
 // Temp
-import user from '../utils/temp/JsonUser'
-import cart from '../utils/temp/JsonCart'
 import offerProducts from '../utils/temp/JsonOffers'
 
 const HomeView = () => {
-  const {getSliders,getCategories,categories,sliders,error,cleanError} = useContext(AppContext)
+  // State
+  const {categories,sliders,error,user,cart} = useContext(AppContext)
 
-  const initHome = async () => {
+  // Actions
+  const {getSliders,getCategories,cleanError} = useContext(AppContext)
+
+  // InitView
+  const initView = async () => {
     openModalCharge()
     await getSliders()
     await getCategories()
@@ -41,36 +41,33 @@ const HomeView = () => {
   }, [error])
 
   useEffect(() => {
-    initHome()
+    window.scroll(0,0)
+    initView()
   }, [])
+  // End InitView
 
   return (
     <div className="HomeView">
-      <StaticHead />
-      <Head
+      <PublicContainer
         view={'home'}
         categories={categories}
         user={user}
         cart={cart}
-      />
-      <Slider
         sliders={sliders}
-      />
-      <div className="HomeView__Content">
-        <CategoryList
-          categories={categories}
-        />
-        <ProductList 
-          listName="OFERTAS"
-          seeAll="/ofertas"
-          products={offerProducts}
-        />
-        <Brands />
-        <Advantage />
-      </div>
-      <Footer
-        categories={categories}
-      />
+      >
+        <div className="HomeView__Content">
+          <CategoryList
+            categories={categories}
+          />
+          <ProductList 
+            listName="OFERTAS"
+            seeAll="/ofertas"
+            products={offerProducts}
+          />
+          <Brands />
+          <Advantage />
+        </div>
+      </PublicContainer>
     </div>
   )
 }

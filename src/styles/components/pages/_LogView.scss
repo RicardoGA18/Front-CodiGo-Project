@@ -1,6 +1,13 @@
-.Login{
-    width: 400px;
-    background-color: $Bg-Container;
+.LogView{
+    padding-top: 70px;
+    &__Form{
+        width: 100%; 
+        @include flexCenter;
+    }
+}
+
+.LogForm{
+    width: 100%;
     &__Contain{
         padding: 20px;
         display: grid;
@@ -17,7 +24,7 @@
             background-color: $Light;
             width: 100%;
             left: 0;
-            top: calc(50% - 1px);
+            top: calc(50% + 1px);
         }
         .Title-3-bold{
             position: relative;
@@ -25,7 +32,7 @@
             @include flexCenter;
             width: 25px;
             height: 25px;
-            background-color: $Bg-Container;
+            background-color: $Bg-Primary;
         }
     }
     &__Form{
@@ -33,7 +40,7 @@
         grid-template-columns: 1fr;
         grid-row-gap: 20px;
     }
-    &__Remember{
+    &__Link{
         width: 100%;
         @include flexCenter;
         p{
@@ -50,4 +57,21 @@
             text-align: center;
         }
     }
+}
+
+@include mq($Tablet){
+    .LogView{
+        &__Form{
+            padding: 40px 0;
+        }
+    }
+    .LogForm{
+        width: 400px;
+        background-color: $Bg-Container;
+        &__Break{
+            .Title-3-bold{
+                background-color: $Bg-Container;
+            }
+        }
+    }    
 }

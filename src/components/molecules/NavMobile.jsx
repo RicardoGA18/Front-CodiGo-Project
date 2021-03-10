@@ -45,9 +45,9 @@ const NavMobile = ({categories,view}) => {
           <p className="Title-2">Inicio</p>
         </Link>
         <div className={`NavMobile__Item is-grid ${setClassView('about')}`}>
-          <div className="NBItemName">
+          <Link to="/nosotros/quienes-somos" className="NBItemName">
             <p className="Title-2">Nosotros</p>
-          </div>
+          </Link>
           <div className="DropButton">
             <input type="checkbox"/>
             <i className="fas fa-angle-down fa-2x"></i>

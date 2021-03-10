@@ -2,14 +2,16 @@ import React, {useEffect, useState} from 'react'
 import setIconMq from '../../utils/setIconMq'
 import { v4 as uuidv4 } from 'uuid'
 
-const Slider = ({sliders}) => {
+const Slider = ({sliders,isProduct}) => {
   const rightIconId = uuidv4()
   const leftIconId = uuidv4()
+
+  const slidesId = sliders.map(slideId => uuidv4())
 
   const setSlides = () => {
     return sliders.map((slide,_id)=>{
       return (
-        <img src={slide} key={_id}/>
+        <img src={slide} key={_id} data-slide={slidesId[_id]} />
       )
     })
   }
@@ -17,19 +19,36 @@ const Slider = ({sliders}) => {
   useEffect(() => {
     const rightIcon = document.querySelector(`[data-icon="${rightIconId}"]`)
     const leftIcon = document.querySelector(`[data-icon="${leftIconId}"]`)
-    if((rightIcon) && (leftIcon)){
-      setIconMq(
-        rightIcon,
-        'fas fa-angle-right fa-2x',
-        'fas fa-angle-right fa-3x',
-        'fas fa-angle-right fa-4x'
-      )
-      setIconMq(
-        leftIcon,
-        'fas fa-angle-left fa-2x',
-        'fas fa-angle-left fa-3x',
-        'fas fa-angle-left fa-4x'
-      )
+    if(isProduct){
+      if((rightIcon) && (leftIcon)){
+        setIconMq(
+          rightIcon,
+          'fas fa-angle-right fa-2x',
+          'fas fa-angle-right fa-3x',
+          'fas fa-angle-right fa-3x'
+        )
+        setIconMq(
+          leftIcon,
+          'fas fa-angle-left fa-2x',
+          'fas fa-angle-left fa-3x',
+          'fas fa-angle-left fa-3x'
+        )
+      }
+    }else{
+      if((rightIcon) && (leftIcon)){
+        setIconMq(
+          rightIcon,
+          'fas fa-angle-right fa-2x',
+          'fas fa-angle-right fa-3x',
+          'fas fa-angle-right fa-4x'
+        )
+        setIconMq(
+          leftIcon,
+          'fas fa-angle-left fa-2x',
+          'fas fa-angle-left fa-3x',
+          'fas fa-angle-left fa-4x'
+        )
+      }
     }
   },[sliders])
 
@@ -60,7 +79,13 @@ const Slider = ({sliders}) => {
   }
 
   useEffect(()=>{
-    const images = Array.from(document.querySelectorAll('.Slider img'))
+    const images = []
+
+    for(let i = 0; i < sliders.length; i++){
+      const image = document.querySelector(`.Slider img[data-slide="${slidesId[i]}"]`)
+      images.push(image)
+    }
+
     images.forEach(image => {
       if(image){
         image.style.opacity = '0'

@@ -1,10 +1,16 @@
 .LogNav{
     height: 70px;
     background-color: $Bg-Container;
+    position: fixed;
+    top: 0;
+    left: 0;
     .l-contain{
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        img{
+            width: 117px;
+        }
     }
 }

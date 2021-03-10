@@ -1,6 +1,6 @@
 .Slider{
   width: 100%;
-  height: calc( (100vw * 500) / 1440 );
+  height: auto;
   position: relative;
   z-index: 1;
   img{
@@ -11,6 +11,11 @@
     left: 0;
     opacity: 0;
     transition: .5s all;
+  }
+  img:first-child{
+    position: relative;
+    width: 100%;
+    height: auto;
   }
   &__Left,&__Right{
     width: 40px;

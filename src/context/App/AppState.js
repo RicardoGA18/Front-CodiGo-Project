@@ -14,7 +14,9 @@ const AppState = (props) => {
   const INITIAL_STATE = {
     categories: [],
     sliders: [],
-    error: null
+    error: null,
+    user: null,
+    cart: [],
   }
 
   const [state, dispatch] = useReducer(AppReducer, INITIAL_STATE)
@@ -64,6 +66,8 @@ const AppState = (props) => {
       categories: state.categories,
       sliders: state.sliders,
       error: state.error,
+      user: state.user,
+      cart: state.cart,
       getCategories,
       getSliders,
       cleanError,

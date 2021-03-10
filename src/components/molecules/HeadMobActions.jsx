@@ -16,7 +16,7 @@ const HeadMobActions = ({categories,view,user,cart}) => {
       )
     }else{
       return (
-        <Link to="/inciar-sesion" className="HeadMobActions__User">
+        <Link to="/iniciar-sesion" className="HeadMobActions__User">
           <i className="fas fa-user"></i>
         </Link>
       )

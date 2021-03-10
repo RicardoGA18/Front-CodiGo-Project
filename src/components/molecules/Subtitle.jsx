@@ -8,12 +8,14 @@ const Subtitle = ({seeAll,name}) => {
 
   useEffect(() => {
     const iconSeeAll = document.querySelector(`[data-icon="${iconSeeAllId}"]`)
-    setIconMq(
-      iconSeeAll,
-      'fas fa-angle-right',
-      'fas fa-angle-right fa-2x',
-      'fas fa-angle-right fa-2x',
-    )
+    if(iconSeeAll){
+      setIconMq(
+        iconSeeAll,
+        'fas fa-angle-right',
+        'fas fa-angle-right fa-2x',
+        'fas fa-angle-right fa-2x',
+      )
+    }
   }, [])
 
   const setSeeAll = () => {

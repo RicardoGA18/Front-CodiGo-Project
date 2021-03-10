@@ -1,0 +1,12 @@
+.CategoriesView{
+  padding-top: 50px;
+  &__Container{
+    padding: 30px 0;
+  }
+}
+
+@include mq($Desktop){
+  .CategoriesView{
+    padding-top: 0;
+  }
+}

@@ -1,11 +1,13 @@
 .ProductCard{
   width: 100%;
   padding: 10px;
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   border-radius: 15px;
   background-color: $Bg-Container;
   grid-gap: 7px;
+  cursor: pointer;
   img{
     width: 100%;
     border-radius: 15px;
@@ -18,5 +20,16 @@
     width: 100%;
     text-align: center;
     color: $Green;
+    position: relative;
+  }
+  &__Discount{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 50%;
+    background-color: $LightBlue;
+    @include flexCenter;
+    width: 70px;
+    height: 70px;
   }
 }

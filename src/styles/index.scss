@@ -44,10 +44,14 @@
 @import './components/organisms/Advantage';
 @import './components/organisms/Footer';
 @import './components/organisms/LogNav';
-@import './components/organisms/Login';
 @import './components/organisms/ProductList';
+@import './components/organisms/Product';
 
 /* Pages */
 @import './components/pages/HomeView';
-@import './components/pages/LoginView';
+@import './components/pages/LogView';
+@import './components/pages/CategoriesView';
+@import './components/pages/CategoryView';
+@import './components/pages/ProductView';
+@import './components/pages/AboutView';
 

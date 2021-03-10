@@ -1,0 +1,59 @@
+.AboutView{
+  padding-top: 50px;
+  &__Content{
+    .l-contain{
+      padding: 30px 0;
+    }
+  }
+}
+
+@include mq($Desktop){
+  .AboutView{
+    padding-top: 0;
+  }
+}
+
+.Who{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  &__Content{
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-gap: 20px;
+  }
+  &__Section{
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-gap: 15px;
+  }
+}
+
+.QA{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  &__Table{
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 2px solid $Hover-Light;
+  }
+  &__Question{
+    padding: 12px 20px;
+    background-color: $Hover-Light;
+  }
+  &__Answer{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+}
+
+@include mq($Desktop){
+  .QA{
+    .Title-3-bold{
+      font-size: $xlg;
+    }
+  }
+}

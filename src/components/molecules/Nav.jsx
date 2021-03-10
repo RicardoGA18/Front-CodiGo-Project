@@ -32,8 +32,10 @@ const Nav = ({categories,view}) => {
       <Link to="/" className={setClass('home')}>
         <p className="Title-4">INICIO</p>
       </Link>
-      <div className={setClass('about')}>
-        <p className="Title-4">NOSOTROS</p>
+      <div className={setClass('about')} style={{ padding: '0' }}>
+        <Link to="/nosotros/quienes-somos" style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '0 15px' }}>
+          <p className="Title-4">NOSOTROS</p>
+        </Link>
         <div className="DropBox">
           <Link
             className="DropBox__Item"

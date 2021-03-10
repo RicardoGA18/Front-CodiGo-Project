@@ -1,0 +1,175 @@
+.Product{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 20px;
+  &__Slider{
+    width: 100%;
+    height: auto;
+    img{
+      border-radius: 15px;
+    }
+  }
+  &__Info{
+    width: 100%;
+    border-radius: 15px;
+    padding: 25px;
+    background-color: $Bg-Container;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+    .is-price{
+      color: $Green;
+      position: relative;
+    }
+  }
+  &__Details{
+    width: 100%;
+    border-radius: 15px;
+    padding: 25px;
+    background-color: $Bg-Container;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    .Switch{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      &__Item{
+        position: relative;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        cursor: pointer;
+      }
+      &__Bar{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 0;
+        background-color: $Light;
+        transition: .3s all;
+      }
+      &__Bar.is-active{
+        width: 100%;
+      }
+    }
+    .PD{
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+      &__Section{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 5px;
+      }
+      &__Title{
+        color: $Light;
+        font-weight: 700;
+        font-size: $lg;
+      }
+      &__Paragraph{
+        color: $Light;
+        font-weight: 400;
+        font-size: $s;
+      }
+    }
+    .PF{
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      border: 1px solid $Light;
+      &__Item{
+        border-bottom: 1px solid $Light;
+      }
+      &__Item:nth-child(odd){
+        background-color: $Hover-Light;
+      }
+      &__Item:last-child{
+        border-bottom: none;
+      }
+      &__Key{
+        border-bottom: 1px solid $Light;
+      }
+      &__Key,&__Value{
+        padding: 8px 10px;
+      }
+    }
+  }
+}
+
+@include mq(768px){
+  .Product{
+    grid-template-columns: repeat(12,1fr);
+    grid-column-gap: 15px;
+    &__Details{
+      grid-column: 1/13;
+      grid-row: 2/3;
+      .Switch{
+        display: flex;
+        
+        &__Item{
+          justify-content: flex-start;
+          width: auto;
+        }
+        &__Item:first-child{
+          margin-right: 30px;
+        }
+      }
+      .PF{
+        &__Item{
+          display: grid;
+          grid-template-columns: 250px 1fr;
+        }
+        &__Key{
+          border-bottom: none;
+          border-right: 1px solid $Light;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          .Paragraph-bold{
+            font-size: $lg;
+          }
+        }
+        &__Value{
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          .Paragraph{
+            font-size: $m;
+          }
+        }
+      }
+    }
+    &__Info{
+      grid-column: 8/13;
+      grid-row: 1/2;
+    }
+    &__Slider{
+      grid-column: 1/8;
+      grid-row: 1/2;
+    }
+  }
+}
+
+@include mq($Desktop){
+  .Product{
+    grid-column-gap: 20px;
+    &__Info{
+      .Title-2-bold{
+        font-size: $xxlg;
+      }
+      .Title-3-bold{
+        font-size: $xlg;
+      }
+      .Title-3{
+        font-size: $xlg;
+      }
+      .Paragraph-bold{
+        font-size: $lg;
+      }
+    }
+  }
+}

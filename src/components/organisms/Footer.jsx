@@ -20,7 +20,7 @@ const Footer = ({categories}) => {
         <div className="Footer__List">
           <h3 className="Footer__ListName Title-2-bold">Navegación</h3>
           <Link to="/"><p className="Footer__Item Paragraph">Inicio</p></Link>
-          <Link to="/nosotros"><p className="Footer__Item Paragraph">Nosotros</p></Link>
+          <Link to="/nosotros/quienes-somos"><p className="Footer__Item Paragraph">Nosotros</p></Link>
           <Link to="/productos"><p className="Footer__Item Paragraph">Productos</p></Link>
           <Link to="/contacto"><p className="Footer__Item Paragraph">Contacto</p></Link>
         </div>
