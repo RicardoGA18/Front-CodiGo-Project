@@ -33,6 +33,9 @@
 @import './components/molecules/CategoryCard';
 @import './components/molecules/StaticTitle';
 @import './components/molecules/ProductCard';
+@import './components/molecules/CartCard';
+@import './components/molecules/Summary';
+
 
 /* Organisms */
 @import './components/organisms/StaticHead';
@@ -54,4 +57,6 @@
 @import './components/pages/CategoryView';
 @import './components/pages/ProductView';
 @import './components/pages/AboutView';
+@import './components/pages/CartView';
+@import './components/pages/PayView';
 

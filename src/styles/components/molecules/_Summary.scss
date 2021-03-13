@@ -1,0 +1,60 @@
+.Summary{
+  width: 100%;
+  &__Content{
+    padding: 20px 15px;
+    border-radius: 15px;
+    background-color: $Bg-Container;
+  }
+  &__Contain{
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  &__Title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    .Title-2{
+      color: $LightBlue;
+    }
+  }
+  &__Item{
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 30px 1fr 80px;
+    grid-gap: 5px;
+    p:first-child{
+      text-align: center;
+    }
+    p{
+      align-self: center;
+    }
+    p:last-child{
+      color: $Green;
+      text-align: right;
+    }
+  }
+  .Button-Primary{
+    margin-top: 20px;
+  }
+}
+
+@include mq($Tablet){
+  .Summary{
+    &__Item{
+      p{
+        font-size: $s;
+      }
+    }
+  }
+}
+
+@include mq($Desktop){
+  .Summary{
+    grid-column: 8/13;
+    &__Item{
+      grid-template-columns: 30px 1fr 90px;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 // React
 import React,{useEffect} from 'react'
 import {useContext} from 'react'
+import {useParams} from 'react-router-dom'
 
 // Context
 import AppContext from '../context/App/AppContext'
@@ -9,27 +10,43 @@ import AppContext from '../context/App/AppContext'
 import PublicContainer from '../components/containers/PublicContainer'
 import Product from '../components/organisms/Product'
 import Subtitle from '../components/molecules/Subtitle'
+import ProductList from '../components/organisms/ProductList'
+
 
 // Utils
 import {openModalCharge,closeModalCharge,errorAlert} from '../utils/Alerts'
 
-// Temp
-import product from '../utils/temp/JsonProduct'
-
 const ProductView = () => {
    // State
-  const {categories,sliders,error,user,cart} = useContext(AppContext)
+  const {categories,sliders,error,user,cart,product,products} = useContext(AppContext)
 
    // Actions
-  const {getSliders,getCategories,cleanError} = useContext(AppContext)
+  const {getSliders,getCategories,cleanError,getProduct,getProducts} = useContext(AppContext)
+
+  // Params
+  const {id} = useParams()
 
   // InitView
   const initView = async () => {
     openModalCharge()
+    await getProduct(id)
     await getSliders()
     await getCategories()
     closeModalCharge()
   }
+
+  useEffect(async () => {
+    window.scroll(0,0)
+    openModalCharge()
+    await getProduct(id)
+    closeModalCharge()
+  },[id])
+
+  useEffect(async ()=>{
+    if(product){
+      await getProducts(product.category.id)
+    }
+  },[product])
 
   useEffect(async () => {
     if(error){
@@ -44,6 +61,51 @@ const ProductView = () => {
   },[])
   // End InitView
 
+  const setProduct = () => {
+    if(product){
+      return (
+        <Product 
+          id={product.id}
+          price={product.price}
+          stock={product.stock}
+          slides={product.slides}
+          description={product.description}
+          details={product.details}
+          discount={product.discount}
+          oficialInformation={product.oficialInformation}
+        />
+      )
+    }else{
+      return <></>
+    }
+  }
+
+  const setProductList = () => {
+    if(product){
+      return(
+        <ProductList 
+          listName="Ver más"
+          seeAll={`/productos/${product.category.id}`}
+          products={products}
+        />
+      )
+    }else{
+      return <></>
+    }
+  }
+
+  const setSubtitle = () => {
+    if(product){
+      return (
+        <Subtitle 
+          name={product.name}
+        />
+      )
+    }else{
+      return <></>
+    }
+  }
+
   return (
     <div className="ProductView">
       <PublicContainer
@@ -56,20 +118,11 @@ const ProductView = () => {
         <div className="ProductView__Container">
           <div className="l-container">
             <div className="l-contain">
-              <Subtitle 
-                name={product.name}
-              />
+              {setSubtitle()}
             </div>
           </div>
-          <Product 
-            id={product.id}
-            price={product.price}
-            stock={product.stock}
-            slides={product.slides}
-            description={product.description}
-            details={product.details}
-            discount={product.discount}
-          />
+          {setProduct()}
+          {setProductList()}
         </div>
       </PublicContainer>
     </div>

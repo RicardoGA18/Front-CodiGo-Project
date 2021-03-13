@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5 {
   font-family: 'Poppins', sans-serif;
 }
 
-p, span {
+p, span, a {
   font-weight: 400;
   color: #FFFFFF;
   font-family: 'Poppins', sans-serif;
@@ -138,7 +138,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 /* Normal */
 .Title-1 {
   font-weight: 400;
-  font-size: 36px;
+  font-size: 30px;
 }
 
 .Title-2 {
@@ -169,7 +169,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 /* Bold */
 .Title-1-bold {
   font-weight: 700;
-  font-size: 36px;
+  font-size: 30px;
 }
 
 .Title-2-bold {
@@ -1035,7 +1035,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 
 @media screen and (min-width: 1000px) {
   .Subtitle__Name h2 {
-    font-size: 36px;
+    font-size: 30px;
   }
   .Subtitle__SeeAll p {
     font-size: 24px;
@@ -1105,7 +1105,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 
 @media screen and (min-width: 1000px) {
   .StaticTitle__Name {
-    font-size: 36px;
+    font-size: 30px;
   }
 }
 
@@ -1157,6 +1157,277 @@ input:focus, textarea:focus, select:focus, button:focus {
           align-items: center;
   width: 70px;
   height: 70px;
+}
+
+.CartCard {
+  width: 100%;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #23242A;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 150px 1fr;
+      grid-template-columns: 150px 1fr;
+  grid-column-gap: 15px;
+  grid-row-gap: 8px;
+}
+
+.CartCard__Img {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.CartCard__Img a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.CartCard__Img img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.CartCard__Contain {
+  position: relative;
+  padding-right: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.CartCard__Delete {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #EB5757;
+  cursor: pointer;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.CartCard__Delete:hover {
+  -webkit-transform: scale(1.1) rotate(2deg);
+          transform: scale(1.1) rotate(2deg);
+}
+
+.CartCard__Price {
+  color: #B7EEA1;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.CartCard__Discount {
+  font-size: 12px;
+  color: #EB5757;
+  position: absolute;
+  top: 25px;
+  right: 0;
+}
+
+.CartCard__Name {
+  margin-bottom: 10px;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.CartCard__Name:hover {
+  color: #1DDECE;
+}
+
+.CartCard__Amount {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  max-width: 150px;
+}
+
+.CartCard__Amount p {
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  color: #0F0F10;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 24px;
+}
+
+.CartCard__Amount button {
+  position: absolute;
+  top: 2px;
+  height: 26px;
+  border-radius: 3px;
+  border: 1px solid #0F0F10;
+  width: 20px;
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.CartCard__Amount button i {
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.CartCard__Amount button:hover {
+  background-color: #0F0F10;
+}
+
+.CartCard__Amount button:hover i {
+  color: #FFFFFF;
+}
+
+.CartCard__Minus {
+  left: 2px;
+}
+
+.CartCard__Plus {
+  right: 2px;
+}
+
+@media screen and (max-width: 550px) {
+  .CartCard {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .CartCard__Contain {
+    padding: 0;
+  }
+  .CartCard__Name {
+    width: 100%;
+    text-align: center;
+  }
+  .CartCard__Price {
+    position: relative;
+    top: 0;
+    text-align: center;
+    left: 0;
+  }
+  .CartCard__Discount {
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}
+
+.Summary {
+  width: 100%;
+}
+
+.Summary__Content {
+  padding: 20px 15px;
+  border-radius: 15px;
+  background-color: #23242A;
+}
+
+.Summary__Contain {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.Summary__Title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+.Summary__Title .Title-2 {
+  color: #1DDECE;
+}
+
+.Summary__Item {
+  margin-bottom: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30px 1fr 80px;
+      grid-template-columns: 30px 1fr 80px;
+  grid-gap: 5px;
+}
+
+.Summary__Item p:first-child {
+  text-align: center;
+}
+
+.Summary__Item p {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.Summary__Item p:last-child {
+  color: #B7EEA1;
+  text-align: right;
+}
+
+.Summary .Button-Primary {
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 500px) {
+  .Summary__Item p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .Summary {
+    -ms-grid-column: 8;
+    -ms-grid-column-span: 5;
+    grid-column: 8/13;
+  }
+  .Summary__Item {
+    -ms-grid-columns: 30px 1fr 90px;
+        grid-template-columns: 30px 1fr 90px;
+  }
 }
 
 /* Organisms */
@@ -1636,6 +1907,19 @@ input:focus, textarea:focus, select:focus, button:focus {
   position: relative;
 }
 
+.Product__Info .Input {
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .Product__Details {
   width: 100%;
   border-radius: 15px;
@@ -1831,12 +2115,9 @@ input:focus, textarea:focus, select:focus, button:focus {
     grid-column-gap: 20px;
   }
   .Product__Info .Title-2-bold {
-    font-size: 36px;
+    font-size: 30px;
   }
   .Product__Info .Title-3-bold {
-    font-size: 24px;
-  }
-  .Product__Info .Title-3 {
     font-size: 24px;
   }
   .Product__Info .Paragraph-bold {
@@ -2101,6 +2382,153 @@ input:focus, textarea:focus, select:focus, button:focus {
 @media screen and (min-width: 1000px) {
   .QA .Title-3-bold {
     font-size: 24px;
+  }
+}
+
+.CartView {
+  padding-top: 50px;
+}
+
+.CartView__Content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-row-gap: 20px;
+  padding: 20px 0;
+}
+
+.CartBox {
+  width: 100%;
+}
+
+.CartBox__Content {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+
+@media screen and (min-width: 1000px) {
+  .CartView {
+    padding-top: 0;
+  }
+  .CartView__Content {
+    grid-gap: 20px;
+    -ms-grid-columns: (1fr)[12];
+        grid-template-columns: repeat(12, 1fr);
+  }
+  .CartView__Content .Subtitle:first-child {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1/13;
+  }
+  .CartBox {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 7;
+    grid-column: 1/8;
+  }
+}
+
+.PayView {
+  padding-top: 50px;
+}
+
+.PayView__Content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-row-gap: 20px;
+  padding: 20px 0;
+}
+
+.PayView__Form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-row-gap: 15px;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+}
+
+.PayView__Form-Personal {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+
+.PayView__Form-Card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+
+.PayView__Form-Card .is-cardDate {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.PayView__Form-Submit {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+
+@media screen and (min-width: 500px) {
+  .PayView__Form-Personal {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .PayView__Form-Card {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .PayView__Form-Submit {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .PayView__Form-Submit input {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .PayView {
+    padding-top: 0;
+  }
+  .PayView__Content {
+    grid-gap: 20px;
+    -ms-grid-columns: (1fr)[12];
+        grid-template-columns: repeat(12, 1fr);
+  }
+  .PayView__Content .Subtitle:first-child {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 12;
+    grid-column: 1/13;
+  }
+  .PayView__Form {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 7;
+    grid-column: 1/8;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
   }
 }
 /*# sourceMappingURL=index.css.map */

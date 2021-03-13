@@ -6,7 +6,8 @@ const HeadActions = ({user,cart}) => {
     if(!cart.length){
       return (<></>)
     }else{
-      return (<div className="HeadActions__CartNumber"><p className="Small">{cart.length}</p></div>)
+      let amount = cart.reduce((accumulator,product) => accumulator + product.amount,0)
+      return (<div className="HeadActions__CartNumber"><p className="Small">{amount}</p></div>)
     }
   }
 

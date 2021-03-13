@@ -15,21 +15,19 @@ import ProductList from '../components/organisms/ProductList'
 // Utils
 import {openModalCharge,closeModalCharge,errorAlert} from '../utils/Alerts'
 
-// Temp
-import offerProducts from '../utils/temp/JsonOffers'
-
 const HomeView = () => {
   // State
-  const {categories,sliders,error,user,cart} = useContext(AppContext)
+  const {categories,sliders,error,user,cart,offerProducts} = useContext(AppContext)
 
   // Actions
-  const {getSliders,getCategories,cleanError} = useContext(AppContext)
+  const {getSliders,getCategories,cleanError,getOfferProducts} = useContext(AppContext)
 
   // InitView
   const initView = async () => {
     openModalCharge()
     await getSliders()
     await getCategories()
+    await getOfferProducts()
     closeModalCharge()
   }
 

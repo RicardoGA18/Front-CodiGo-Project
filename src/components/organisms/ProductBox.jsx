@@ -4,23 +4,40 @@ import ProductCard from '../molecules/ProductCard'
 
 const ProductBox = ({products}) => {
   const setProducts = () => {
-    const offerProducts = products.filter(product => product.discount > 0)
-    const leftProducts = products.filter(product => product.discount == 0)
+    if(products.length){
+      const offerProducts = products.filter(product => product.discount > 0)
+      const leftProducts = products.filter(product => product.discount == 0)
 
-    const orderProducts = [...offerProducts,...leftProducts]
+      const orderProducts = [...offerProducts,...leftProducts]
 
-    return orderProducts.map((product,idx) => {
+      return orderProducts.map((product,idx) => {
+        return (
+          <ProductCard 
+            id={product.id}
+            key={idx}
+            name={product.name}
+            img={product.img}
+            price={product.price}
+            discount={product.discount}
+          />
+        )
+      })
+    }else{
+      return <></>
+    }
+  }
+
+  const setSubtitle = () => {
+    if(products.length){
       return (
-        <ProductCard 
-          id={product.id}
-          key={idx}
-          name={product.name}
-          img={product.img}
-          price={product.price}
-          discount={product.discount}
+        <Subtitle 
+          name={products[0].category.name.toUpperCase()}
         />
       )
-    })
+    }
+    else{
+      return <></>
+    }
   }
 
   return (
@@ -32,9 +49,7 @@ const ProductBox = ({products}) => {
           gridGap: '20px'
         }}
       >
-        <Subtitle 
-          name={products[0].category.name.toUpperCase()}
-        />
+        {setSubtitle()}
         <div className="l-gridAutoFit">
           {setProducts()}
         </div>

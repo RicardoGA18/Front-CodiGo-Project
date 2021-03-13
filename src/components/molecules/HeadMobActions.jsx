@@ -25,10 +25,11 @@ const HeadMobActions = ({categories,view,user,cart}) => {
 
   const setCart = () => {
     if(cart.length){
+      let amount = cart.reduce((accumulator,product) => accumulator + product.amount,0)
       return (
         <Link to="/carrito" className="HeadMobActions__Cart">
           <i className="fas fa-shopping-cart"></i>
-          <div className="HeadMobActions__CartNumber"><p className="Small">{cart.length}</p></div>
+          <div className="HeadMobActions__CartNumber"><p className="Small">{amount}</p></div>
         </Link>
       )
     }

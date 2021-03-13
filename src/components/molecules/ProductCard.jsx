@@ -1,8 +1,25 @@
-import React from 'react'
+import React,{useContext,useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
+import AppContext from '../../context/App/AppContext'
+// UTILS
+import {openModalCharge,closeModalCharge,errorAlert} from '../../utils/Alerts'
 
 const ProductCard = ({name,id,price,img,discount}) => {
+    const {addCartItem,error,cleanError} = useContext(AppContext)
     const history = useHistory()
+
+    const addToCart = async () => {
+        openModalCharge()
+        await addCartItem(id,1)
+        closeModalCharge()
+    }
+
+    useEffect(async () => {
+        if(error){
+            await errorAlert(error)
+            cleanError()
+        }
+    }, [error])
 
     const setDiscountText = () => {
         if(discount){
@@ -39,7 +56,7 @@ const ProductCard = ({name,id,price,img,discount}) => {
             <img src={img} alt={name}/>
             <p className="Title-3-bold">{name}</p>
             <p className="Title-2-bold">{`S/. ${(((100 - discount) * price) / 100).toFixed(2)}`}{setDiscountText()}</p>
-            <button className="Button-Primary Title-3-bold">
+            <button className="Button-Primary Title-3-bold" onClick={() => {addToCart()}}>
                 Agregar al carrito
             </button>
             {setDiscount()}

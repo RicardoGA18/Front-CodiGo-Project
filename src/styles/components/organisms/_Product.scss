@@ -21,6 +21,12 @@
       color: $Green;
       position: relative;
     }
+    .Input{
+      background-color: $Light;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
   }
   &__Details{
     width: 100%;
@@ -162,9 +168,6 @@
         font-size: $xxlg;
       }
       .Title-3-bold{
-        font-size: $xlg;
-      }
-      .Title-3{
         font-size: $xlg;
       }
       .Paragraph-bold{

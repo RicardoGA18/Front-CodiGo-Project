@@ -1,0 +1,71 @@
+.PayView{
+  padding-top: 50px;
+  &__Content{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 20px;
+    padding: 20px 0;
+  }
+  &__Form{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 15px;
+    grid-row: 3/4;
+    &-Personal{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 15px;
+    }
+    &-Card{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 15px;
+      .is-cardDate{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+      }
+    }
+    &-Submit{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 15px;
+    }
+  }
+}
+
+@include mq($Tablet){
+  .PayView{
+    &__Form{
+      &-Personal{
+        grid-template-columns: 1fr 1fr;
+      }
+      &-Card{
+        grid-template-columns: 1fr 1fr;
+      }
+      &-Submit{
+        grid-template-columns: 1fr 1fr;
+        input{
+          grid-column: 2/3;
+        }
+      }
+    }
+  }
+}
+
+@include mq($Desktop){
+  .PayView{
+    padding-top: 0;
+    &__Content{
+      grid-gap: 20px;
+      grid-template-columns: repeat(12,1fr);
+    }
+    &__Content .Subtitle:first-child{
+      grid-column: 1/13;
+    }
+    &__Form{
+      grid-column: 1/8;
+      grid-row: 2/3;
+    }
+  }
+}

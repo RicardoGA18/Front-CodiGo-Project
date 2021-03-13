@@ -9,6 +9,8 @@ import CategoryView from './views/CategoryView'
 import ProductView from './views/ProductView'
 import AboutView from './views/AboutView'
 import AppState from './context/App/AppState'
+import CartView from './views/CartView'
+import PayView from './views/PayView'
 // Auxiliar
 import Probe from './views/Probe'
 
@@ -27,6 +29,8 @@ function App() {
             <Route exact path="/producto/:id" component={ProductView} />
             <Route exact path="/nosotros/:info" component={AboutView} />
             <Route exact path="/probe" component={Probe} />
+            <Route exact path="/carrito" component={CartView} />
+            <Route exact path="/pasarela-de-pago" component={PayView} />
           </Switch>
         </BrowserRouter>
       </AppState>
