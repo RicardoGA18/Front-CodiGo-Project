@@ -5,7 +5,6 @@ import {useParams} from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 const Profile = () => {
-  const {id} = useParams()
   const {user,updateUser} = useContext(AppContext)
   const [newUser,setNewUser] = useState({
     name: '',
@@ -15,12 +14,13 @@ const Profile = () => {
   })
 
   useEffect(() => {
+    const {id} = useParams()
     setNewUser({
       name: user.name,
       lastName: user.lastName,
       img: null,
       email: user.email,
-      id
+      id: user.id || id
     })
   },[])
 
@@ -53,6 +53,7 @@ const Profile = () => {
   }
 
   const manageSubmit = async e => {
+    const {id} = useParams()
     e.preventDefault()
     const result = await Swal.fire({
       title: '¿Seguro?',
@@ -73,7 +74,7 @@ const Profile = () => {
           lastName: respond.lastName,
           img: null,
           email: respond.email,
-          id: id
+          id: user.id || id
         })
       }
       closeModalCharge()
