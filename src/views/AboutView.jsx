@@ -12,15 +12,15 @@ import Who from '../components/atoms/Who'
 import QA from '../components/atoms/QA'
 
 // Utils
-import {openModalCharge,closeModalCharge,errorAlert} from '../utils/Alerts'
+import {openModalCharge,closeModalCharge} from '../utils/Alerts'
 
 const AboutView = () => {
   // State
-  const {categories,sliders,error,user,cart} = useContext(AppContext)
+  const {categories,sliders,user,cart} = useContext(AppContext)
   const {info} = useParams()
 
   // Actions
-  const {getSliders,getCategories,cleanError} = useContext(AppContext)
+  const {getSliders,getCategories} = useContext(AppContext)
 
   // InitView
   const initView = async () => {
@@ -29,13 +29,6 @@ const AboutView = () => {
     await getCategories()
     closeModalCharge()
   }
-
-  useEffect( async () => {
-    if(error){
-      await errorAlert(error)
-      cleanError()
-    }
-  },[error])
 
   // SetContentHTML
   const setContentHTML = () => {

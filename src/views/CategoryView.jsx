@@ -11,14 +11,14 @@ import PublicContainer from '../components/containers/PublicContainer'
 import ProductBox from '../components/organisms/ProductBox'
 
 // Utils
-import {openModalCharge,closeModalCharge,errorAlert} from '../utils/Alerts'
+import {openModalCharge,closeModalCharge} from '../utils/Alerts'
 
 const CategoryView = () => {
   // State
-  const {categories,sliders,error,user,cart,products} = useContext(AppContext)
+  const {categories,sliders,user,cart,products} = useContext(AppContext)
 
   // Actions
-  const {getSliders,getCategories,cleanError,getProducts} = useContext(AppContext)
+  const {getSliders,getCategories,getProducts} = useContext(AppContext)
 
   // Params
   const {id} = useParams()
@@ -31,13 +31,6 @@ const CategoryView = () => {
     await getProducts(id)
     closeModalCharge()
   }
-
-  useEffect(async () => {
-    if(error){
-      await errorAlert(error)
-      cleanError()
-    }
-  },[error])
 
   useEffect(()=>{
     window.scroll(0,0)

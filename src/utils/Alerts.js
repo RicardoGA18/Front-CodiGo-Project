@@ -5,7 +5,7 @@ const errorAlert = async (message) => {
   await Swal.fire({
     title: 'Error',
     icon: 'error',
-    text: message,
+    html: `<span style="color: black">${message}</span>`
   })
 }
 

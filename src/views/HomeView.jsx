@@ -13,14 +13,14 @@ import Advantage from '../components/organisms/Advantage'
 import ProductList from '../components/organisms/ProductList'
 
 // Utils
-import {openModalCharge,closeModalCharge,errorAlert} from '../utils/Alerts'
+import {openModalCharge,closeModalCharge} from '../utils/Alerts'
 
 const HomeView = () => {
   // State
-  const {categories,sliders,error,user,cart,offerProducts} = useContext(AppContext)
+  const {categories,sliders,user,cart,offerProducts} = useContext(AppContext)
 
   // Actions
-  const {getSliders,getCategories,cleanError,getOfferProducts} = useContext(AppContext)
+  const {getSliders,getCategories,getOfferProducts} = useContext(AppContext)
 
   // InitView
   const initView = async () => {
@@ -30,13 +30,6 @@ const HomeView = () => {
     await getOfferProducts()
     closeModalCharge()
   }
-
-  useEffect(async () => {
-    if(error){
-      await errorAlert(error)
-      cleanError()
-    }
-  }, [error])
 
   useEffect(() => {
     window.scroll(0,0)

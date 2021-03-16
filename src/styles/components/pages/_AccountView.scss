@@ -1,0 +1,177 @@
+.AccountView{
+  padding-top: 50px;
+  &__Content{
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  &__Options{
+    width: 100%;
+    &-Content{
+      background-color: $Bg-Container;
+    }
+    &-Title{
+      padding: 5px 10px;
+      background-color: $Hover-Light;
+      display: flex;
+      height: 50px;
+      justify-content: space-between;
+      align-items: center;
+      .Checkbox{
+        position: relative;
+        width: 25px;
+        height: 25px;
+        input,i{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+        }
+        i{
+          @include flexCenter;
+          color: $Light;
+          z-index: 1;
+          transition: .3s all;
+        }
+        input{
+          opacity: 0;
+          cursor: pointer;
+        }
+        i.fa-plus{
+          opacity: 0;
+        }
+        
+        input:checked ~ i.fa-plus{
+          transform: rotate(180deg);
+          opacity: 1;
+        }
+        input:checked ~ i.fa-minus{
+          transform: rotate(180deg);
+          opacity: 0;
+        }
+      } 
+    }
+    #dropboxProfile{
+      max-height: 160px;
+      transition: .5s all;
+      overflow: hidden;
+    }
+    .Paragraph{
+      height: 40px;
+      padding: 5px 10px;
+      display: flex;
+      align-items: center;
+      border: 1px solid $Hover-Light;
+      border-top: none;
+      cursor: pointer;
+    }
+    .Paragraph:last-child{
+      background-color: rgb(190, 36, 36);
+      font-weight: bold;
+      i{
+        margin-left: 5px;
+      }
+    }
+  }
+  .Profile{
+    width: 100%;
+    padding: 20px;
+    background-color: $Bg-Container;
+    border-radius: 10px;
+    &__Content{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 15px;
+    }
+    &__Title{
+      text-align: center;
+    }
+    &__Img{
+      width: 100px;
+      height: 100px;
+      background-color: $Hover-Light;
+      margin: 0 auto;
+      border-radius: 15px;
+      overflow: hidden;
+      @include flexCenter;
+      p{
+        font-size: 36px;
+      }
+      img{
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    &__Form{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-row-gap: 10px;
+      grid-column-gap: 20px;
+      input[type="submit"]{
+        margin-top: 10px;
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+    &__Submit{
+      @include flexCenter;
+    }
+    &__ImgButton{
+      position: relative;
+      width: 100%;
+      max-width: 160px;
+      margin: 0 auto;
+      input[type="file"]{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+      }
+      input[type="file"]:hover ~ button{
+        background-color: $Light;
+        color: $Bg-Primary;
+        i{
+          color: $Bg-Primary;
+        }
+      }
+    }
+  }
+}
+
+@include mq($Desktop){
+  .AccountView{
+    padding-top: 0;
+    &__Content{
+      grid-template-columns: repeat(4, 1fr);
+      .Subtitle{
+        grid-column: 1/5;
+      }
+    }
+    .Profile{
+      grid-column: 2/5;
+      &__Form{
+        grid-template-columns: 1fr 1fr;
+        div:first-child{
+          grid-column: 1/3;
+        }
+        div:last-child{
+          grid-column: 1/3;
+        }
+      }
+      &__Title{
+        font-size: $xlg;
+      }
+      &__Img{
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+}

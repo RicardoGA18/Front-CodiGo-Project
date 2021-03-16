@@ -10,14 +10,14 @@ import PublicContainer from '../components/containers/PublicContainer'
 import CategoryBox from '../components/organisms/CategoryBox'
 
 //Utils
-import {openModalCharge,closeModalCharge,errorAlert} from '../utils/Alerts'
+import {openModalCharge,closeModalCharge} from '../utils/Alerts'
 
 const CategoriesView = () => {
   // State
-  const {categories,sliders,error,user,cart} = useContext(AppContext)
+  const {categories,sliders,user,cart} = useContext(AppContext)
 
   // Actions
-  const {getSliders,getCategories,cleanError} = useContext(AppContext)
+  const {getSliders,getCategories} = useContext(AppContext)
 
   // InitView
   const initView = async () => {
@@ -26,13 +26,6 @@ const CategoriesView = () => {
     await getCategories()
     closeModalCharge()
   }
-
-  useEffect(async () => {
-    if(error){
-      await errorAlert(error)
-      cleanError()
-    }
-  },[error])
 
   useEffect(() => {
     window.scroll(0,0)

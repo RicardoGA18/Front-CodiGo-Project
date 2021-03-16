@@ -1,9 +1,14 @@
-import {GET_CATEGORIES,GET_SLIDERS,SET_ERROR,GET_OFFERS,GET_PRODUCTS, GET_PRODUCT,ADD_CART} from '../types'
+import {GET_CATEGORIES,GET_SLIDERS,SET_ERROR,GET_OFFERS,GET_PRODUCTS, GET_PRODUCT,ADD_CART,SET_USER} from '../types'
 import setCartLS from '../utils/setCartLS'
 
 export default (state,action) => {
   const {payload , type} = action
   switch(type){
+    case SET_USER:
+      return {
+        ...state,
+        user: payload
+      }
     case GET_CATEGORIES:
       return {
         ...state,

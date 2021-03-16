@@ -2,10 +2,12 @@ import React,{useEffect,useState,useContext} from 'react'
 import {Link} from 'react-router-dom'
 import LogNav from '../components/organisms/LogNav'
 import AppContext from '../context/App/AppContext'
-import {openModalCharge,closeModalCharge,errorAlert} from '../utils/Alerts'
+import {openModalCharge,closeModalCharge} from '../utils/Alerts'
+import {useHistory} from 'react-router-dom'
 
 const RegisterView = () => {
-  const {registerUser,error,cleanError} = useContext(AppContext)
+  const {registerUser} = useContext(AppContext)
+  const history = useHistory()
 
   useEffect(()=>{
     window.scroll(0,0)
@@ -31,14 +33,10 @@ const RegisterView = () => {
     openModalCharge()
     const respond = await registerUser(user)
     closeModalCharge()
-  }
-
-  useEffect(async () => {
-    if(error){
-      await errorAlert(error)
-      cleanError()
+    if(respond){
+      history.push('/')
     }
-  }, [error])
+  }
 
   return (
     <div className="LogView">
@@ -59,11 +57,11 @@ const RegisterView = () => {
               <p className="Title-3-bold">o</p>
             </div>
             <form className="LogForm__Form" onSubmit={manejarSubmit}>
-              <input type="text" className="Input Title-3" placeholder="Nombre" name="name" value={user.name} onChange={(e) => {actualizarInput(e)}}/>
-              <input type="text" className="Input Title-3" placeholder="Apellido" name="lastName" value={user.lastName} onChange={(e) => {actualizarInput(e)}}/>
-              <input type="email" className="Input Title-3" placeholder="Email" name="email" value={user.email} onChange={(e) => {actualizarInput(e)}}/>
-              <input type="password" className="Input Title-3" placeholder="Contraseña" name="pass1" value={user.pass1} onChange={(e) => {actualizarInput(e)}}/>
-              <input type="password" className="Input Title-3" placeholder="Repetir Contraseña" name="pass2" value={user.pass2} onChange={(e) => {actualizarInput(e)}}/>
+              <input type="text" className="Input Title-3" placeholder="Nombre" name="name" value={user.name} onChange={(e) => {actualizarInput(e)}} required pattern="[A-Za-z]{2,}"/>
+              <input type="text" className="Input Title-3" placeholder="Apellido" name="lastName" value={user.lastName} onChange={(e) => {actualizarInput(e)}} required pattern="[A-Za-z]{2,}"/>
+              <input type="email" className="Input Title-3" placeholder="Email" name="email" value={user.email} onChange={(e) => {actualizarInput(e)}} required pattern=".{3,}"/>
+              <input type="password" className="Input Title-3" placeholder="Contraseña" name="pass1" value={user.pass1} onChange={(e) => {actualizarInput(e)}} pattern=".{6,}" required/>
+              <input type="password" className="Input Title-3" placeholder="Repetir Contraseña" name="pass2" value={user.pass2} onChange={(e) => {actualizarInput(e)}} pattern=".{6,}" required/>
               <input type="submit" className="Button-Primary Title-3-bold" value="Regístrate"/>
             </form>
           </div>

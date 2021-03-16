@@ -15,5 +15,8 @@ export const GET_PRODUCT = 'GET_PRODUCT'
 // CART
 export const ADD_CART = 'ADD_CART'
 
+// USER
+export const SET_USER = 'SET_USER'
+
 // LOCAL STORAGE
 export const LOCAL_KEY = 'Computer Store Cart Local Storage'

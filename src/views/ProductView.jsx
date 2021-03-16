@@ -14,14 +14,14 @@ import ProductList from '../components/organisms/ProductList'
 
 
 // Utils
-import {openModalCharge,closeModalCharge,errorAlert} from '../utils/Alerts'
+import {openModalCharge,closeModalCharge} from '../utils/Alerts'
 
 const ProductView = () => {
    // State
-  const {categories,sliders,error,user,cart,product,products} = useContext(AppContext)
+  const {categories,sliders,user,cart,product,products} = useContext(AppContext)
 
    // Actions
-  const {getSliders,getCategories,cleanError,getProduct,getProducts} = useContext(AppContext)
+  const {getSliders,getCategories,getProduct,getProducts} = useContext(AppContext)
 
   // Params
   const {id} = useParams()
@@ -47,13 +47,6 @@ const ProductView = () => {
       await getProducts(product.category.id)
     }
   },[product])
-
-  useEffect(async () => {
-    if(error){
-      await errorAlert(error)
-      cleanError()
-    }
-  },[error])
 
   useEffect(()=>{
     window.scroll(0,0)

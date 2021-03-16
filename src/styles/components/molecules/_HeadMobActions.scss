@@ -14,6 +14,7 @@
     width: 30px;
     height: 30px;
     border-radius: 5px;
+    overflow: hidden;
     background-color: $Hover-Light;
     @include flexCenter;
     img{

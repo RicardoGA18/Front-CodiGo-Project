@@ -11,14 +11,14 @@ import SubTitle from '../components/molecules/Subtitle'
 import Summary from '../components/molecules/Summary'
 
 // Utils
-import {openModalCharge,closeModalCharge,errorAlert} from '../utils/Alerts' 
+import {openModalCharge,closeModalCharge} from '../utils/Alerts' 
 
 const PayView = () => {
   // State
-  const {categories,error,user,cart} = useContext(AppContext)
+  const {categories,user,cart} = useContext(AppContext)
 
   // Actions
-  const {getCategories,cleanError} = useContext(AppContext)
+  const {getCategories} = useContext(AppContext)
 
   // InitView
   const initView = async () => {
@@ -26,13 +26,6 @@ const PayView = () => {
     await getCategories()
     closeModalCharge()
   }
-
-  useEffect(async () => {
-    if(error){
-      await errorAlert(error)
-      cleanError()
-    }
-  }, [error])
 
   useEffect(() => {
     window.scroll(0,0)

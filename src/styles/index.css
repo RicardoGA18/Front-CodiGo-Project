@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5 {
   font-family: 'Poppins', sans-serif;
 }
 
-p, span, a {
+p, span, a, label {
   font-weight: 400;
   color: #FFFFFF;
   font-family: 'Poppins', sans-serif;
@@ -660,6 +660,7 @@ input:focus, textarea:focus, select:focus, button:focus {
   width: 30px;
   height: 30px;
   border-radius: 5px;
+  overflow: hidden;
   background-color: rgba(255, 255, 255, 0.2);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2529,6 +2530,265 @@ input:focus, textarea:focus, select:focus, button:focus {
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2/3;
+  }
+}
+
+.AccountView {
+  padding-top: 50px;
+}
+
+.AccountView__Content {
+  padding: 20px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+.AccountView__Options {
+  width: 100%;
+}
+
+.AccountView__Options-Content {
+  background-color: #23242A;
+}
+
+.AccountView__Options-Title {
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.AccountView__Options-Title .Checkbox {
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+
+.AccountView__Options-Title .Checkbox input, .AccountView__Options-Title .Checkbox i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.AccountView__Options-Title .Checkbox i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #FFFFFF;
+  z-index: 1;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.AccountView__Options-Title .Checkbox input {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.AccountView__Options-Title .Checkbox i.fa-plus {
+  opacity: 0;
+}
+
+.AccountView__Options-Title .Checkbox input:checked ~ i.fa-plus {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  opacity: 1;
+}
+
+.AccountView__Options-Title .Checkbox input:checked ~ i.fa-minus {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  opacity: 0;
+}
+
+.AccountView__Options #dropboxProfile {
+  max-height: 160px;
+  -webkit-transition: .5s all;
+  transition: .5s all;
+  overflow: hidden;
+}
+
+.AccountView__Options .Paragraph {
+  height: 40px;
+  padding: 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: none;
+  cursor: pointer;
+}
+
+.AccountView__Options .Paragraph:last-child {
+  background-color: #be2424;
+  font-weight: bold;
+}
+
+.AccountView__Options .Paragraph:last-child i {
+  margin-left: 5px;
+}
+
+.AccountView .Profile {
+  width: 100%;
+  padding: 20px;
+  background-color: #23242A;
+  border-radius: 10px;
+}
+
+.AccountView .Profile__Content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+
+.AccountView .Profile__Title {
+  text-align: center;
+}
+
+.AccountView .Profile__Img {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.AccountView .Profile__Img p {
+  font-size: 36px;
+}
+
+.AccountView .Profile__Img img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.AccountView .Profile__Form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-row-gap: 10px;
+  grid-column-gap: 20px;
+}
+
+.AccountView .Profile__Form input[type="submit"] {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.AccountView .Profile__Submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.AccountView .Profile__ImgButton {
+  position: relative;
+  width: 100%;
+  max-width: 160px;
+  margin: 0 auto;
+}
+
+.AccountView .Profile__ImgButton input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.AccountView .Profile__ImgButton input[type="file"]:hover ~ button {
+  background-color: #FFFFFF;
+  color: #0F0F10;
+}
+
+.AccountView .Profile__ImgButton input[type="file"]:hover ~ button i {
+  color: #0F0F10;
+}
+
+@media screen and (min-width: 1000px) {
+  .AccountView {
+    padding-top: 0;
+  }
+  .AccountView__Content {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+  .AccountView__Content .Subtitle {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1/5;
+  }
+  .AccountView .Profile {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 3;
+    grid-column: 2/5;
+  }
+  .AccountView .Profile__Form {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .AccountView .Profile__Form div:first-child {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+  }
+  .AccountView .Profile__Form div:last-child {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+  }
+  .AccountView .Profile__Title {
+    font-size: 24px;
+  }
+  .AccountView .Profile__Img {
+    width: 150px;
+    height: 150px;
   }
 }
 /*# sourceMappingURL=index.css.map */
