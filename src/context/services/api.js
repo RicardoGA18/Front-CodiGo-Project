@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { getToken } from '../utils/manageSession'
 
-// const baseUrl = 'https://computer-store-back.herokuapp.com/api'
-const baseUrl = 'http://localhost:8000/api'
+const baseUrl = 'https://computer-store-back.herokuapp.com/api'
+// const baseUrl = 'http://localhost:8000/api'
 
 export const apiFetch = async (url,body=null,method='GET') => {
   try {
