@@ -31,7 +31,7 @@ const ProductBox = ({products,categoryName}) => {
     if(products.length){
       return (
         <Subtitle 
-          name={categoryName.toUpperCase()}
+          name={categoryName ? categoryName.toUpperCase() : ''}
         />
       )
     }
