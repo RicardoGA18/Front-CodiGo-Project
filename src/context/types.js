@@ -15,10 +15,12 @@ export const GET_PRODUCT = 'GET_PRODUCT'
 
 // CART
 export const ADD_CART = 'ADD_CART'
+export const SET_CART = 'SET_CART'
 export const CREATE_PREFERENCE = 'CREATE_PREFERENCE'
 
 // USER
 export const SET_USER = 'SET_USER'
+export const GET_PURCHASES = 'GET_PURCHASES'
 
 // LOCAL STORAGE
 export const LOCAL_KEY = 'Computer Store Cart Local Storage'

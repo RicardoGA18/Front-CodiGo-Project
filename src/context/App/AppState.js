@@ -4,7 +4,7 @@ import AppReducer from './AppReducer'
 import AppContext from './AppContext'
 
 // Types
-import {CREATE_PREFERENCE,GET_CATEGORIES,GET_SLIDERS,SET_ERROR,GET_OFFERS,GET_PRODUCTS,GET_PRODUCT,ADD_CART,SET_USER,GET_LATEST} from '../types'
+import {GET_PURCHASES,SET_CART,CREATE_PREFERENCE,GET_CATEGORIES,GET_SLIDERS,SET_ERROR,GET_OFFERS,GET_PRODUCTS,GET_PRODUCT,ADD_CART,SET_USER,GET_LATEST} from '../types'
 
 // Fetch Functions
 import fetchSliders from '../utils/fetchSliders'
@@ -14,12 +14,14 @@ import fetchLatest from '../utils/fetchLatest'
 import fetchProducts from '../utils/fetchProducts'
 import fetchProduct from '../utils/fetchProduct'
 import getCartLS from '../utils/getCartLS'
+import setCartLS from '../utils/setCartLS'
 import addUser from '../utils/addUser'
 import logUser from '../utils/logUser'
 import setNewUser from '../utils/setNewUser'
 import signOutUser from '../utils/signOutUser'
 import { getUserLS } from '../utils/manageSession'
 import createPreference from '../utils/createPreference'
+import fetchPurchases from '../utils/fetchPurchases'
 
 const AppState = (props) => {
   const INITIAL_STATE = {
@@ -32,11 +34,27 @@ const AppState = (props) => {
     error: null,
     user: getUserLS(),
     cart: getCartLS(),
+    purchases: [],
   }
 
   const [state, dispatch] = useReducer(AppReducer, INITIAL_STATE)
 
   // Payment
+  const getPurchases = async (userId) => {
+    try {
+      const purchases = await fetchPurchases(userId)
+      dispatch({
+        type: GET_PURCHASES,
+        payload: purchases
+      })
+    } catch (error) {
+      dispatch({
+        type: SET_ERROR,
+        payload: error.message
+      })
+    }
+  }
+
   const getPreference = async (preference) => {
     try {
       const { url } = await createPreference(preference)
@@ -142,6 +160,14 @@ const AppState = (props) => {
         payload: error.message
       })
     }
+  }
+
+  const setCart = (cart) => {
+    setCartLS(cart)
+    dispatch({
+      type: SET_CART,
+      payload: cart
+    })
   }
 
   // PRODUCTS
@@ -263,6 +289,7 @@ const AppState = (props) => {
       latestProducts: state.latestProducts,
       products: state.products,
       product: state.product,
+      purchases: state.purchases,
       addCartItem,
       getProduct,
       getProducts,
@@ -278,6 +305,8 @@ const AppState = (props) => {
       updateUser,
       signOut,
       getPreference,
+      setCart,
+      getPurchases,
     }}>
       {props.children}
     </AppContext.Provider>

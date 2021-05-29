@@ -22,6 +22,7 @@ import OfferView from './views/OfferView'
 import LatestView from './views/LatestView'
 import SuccessView from './views/SuccessView'
 import FailureView from './views/FailureView'
+import ContactView from './views/ContactView'
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
               <PublicRoute exact path="/carrito" component={CartView} />
               <PublicRoute exact path="/ofertas" component={OfferView} />
               <PublicRoute exact path="/lo-ultimo" component={LatestView} />
+              <PublicRoute exact path="/contacto" component={ContactView} />
               <PrivateRoute exact path="/pasarela-de-pago" component={PayView} />
               <PrivateRoute exact path="/pasarela-de-pago/success" component={SuccessView} />
               <PrivateRoute exact path="/pasarela-de-pago/failure" component={FailureView} />

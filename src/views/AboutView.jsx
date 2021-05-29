@@ -1,7 +1,7 @@
 // React
 import React, {useEffect} from 'react'
 import {useContext} from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams,useHistory} from 'react-router-dom'
 
 // Context
 import AppContext from '../context/App/AppContext'
@@ -10,6 +10,9 @@ import AppContext from '../context/App/AppContext'
 import PublicContainer from '../components/containers/PublicContainer'
 import Who from '../components/atoms/Who'
 import QA from '../components/atoms/QA'
+import Advantaje from '../components/atoms/Advantaje'
+import HowBuy from '../components/atoms/HowBuy'
+import Stores from '../components/atoms/Stores'
 
 // Utils
 import {openModalCharge,closeModalCharge} from '../utils/Alerts'
@@ -18,6 +21,7 @@ const AboutView = () => {
   // State
   const {categories,sliders,user,cart} = useContext(AppContext)
   const {info} = useParams()
+  const history = useHistory()
 
   // Actions
   const {getSliders,getCategories} = useContext(AppContext)
@@ -37,8 +41,15 @@ const AboutView = () => {
         return <Who />
       case 'preguntas-frecuentes':
         return <QA />
+      case 'como-comprar':
+        return <HowBuy />
+      case 'nuestras-ventajas':
+        return <Advantaje />
+      case 'nuestras-tiendas':
+        return <Stores />
       default:
-        return <h1 className="Title-2-bold">En desarrollo</h1>
+        history.push('/')
+        return <></>
     }
   }
 

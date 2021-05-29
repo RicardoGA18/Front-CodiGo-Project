@@ -9,6 +9,7 @@ import StaticHead from '../components/organisms/StaticHead'
 import Head from '../components/organisms/Head'
 import Subtitle from '../components/molecules/Subtitle'
 import Profile from '../components/organisms/Profile'
+import Purchases from '../components/organisms/Purchases'
 
 // Utils
 import {openModalCharge,closeModalCharge} from '../utils/Alerts'
@@ -34,12 +35,14 @@ const AccountView = () => {
   },[])
   // End InitView
 
-  const [content,setContent] = useState('profile') 
+  const [content,setContent] = useState('purchases') 
 
   const setContentSwitch = () => {
     switch (content){
       case 'profile':
         return <Profile />
+      case 'purchases':
+        return <Purchases />
     }
   }
 
@@ -86,9 +89,9 @@ const AccountView = () => {
                 </div>
               </div>
               <div id="dropboxProfile">
-                <p className="Paragraph">Información Personal</p>
+                <p className="Paragraph" onClick={() => {setContent('profile')}}>Información Personal</p>
                 <p className="Paragraph">Cambiar Contraseña</p>
-                <p className="Paragraph">Historial de pedidos</p>
+                <p className="Paragraph" onClick={() => {setContent('purchases')}}>Historial de pedidos</p>
                 <p className="Paragraph" onClick={() => {manageSignOut()}}>Cerrar Sesión <i className="fas fa-sign-out-alt"></i></p>
               </div>
             </div>

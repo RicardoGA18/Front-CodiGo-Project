@@ -1,4 +1,4 @@
-import {GET_CATEGORIES,GET_SLIDERS,SET_ERROR,GET_OFFERS,GET_PRODUCTS, GET_PRODUCT,ADD_CART,SET_USER,GET_LATEST} from '../types'
+import {GET_PURCHASES,SET_CART,GET_CATEGORIES,GET_SLIDERS,SET_ERROR,GET_OFFERS,GET_PRODUCTS, GET_PRODUCT,ADD_CART,SET_USER,GET_LATEST} from '../types'
 import setCartLS from '../utils/setCartLS'
 
 export default (state,action) => {
@@ -43,6 +43,16 @@ export default (state,action) => {
       return {
         ...state,
         product: payload
+      }
+    case GET_PURCHASES:
+      return {
+        ...state,
+        purchases: payload
+      }
+    case SET_CART:
+      return {
+        ...state,
+        cart: payload
       }
     case ADD_CART:
       const sameProducts = state.cart.filter(product => product.id === payload.id)
