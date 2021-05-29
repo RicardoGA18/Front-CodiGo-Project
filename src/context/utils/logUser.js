@@ -1,29 +1,29 @@
-import {auth,db} from '../../firebase'
+import { apiFetch } from '../services/api'
+import { setUserLS , setToken } from './manageSession'
 
 const logUser = async (user) => {
-  let respond = {
+  const respond = {
     user: null,
-    error: null
+    error: null,
   }
   try {
-    const responseAuth = await auth.signInWithEmailAndPassword(user.email,user.password)
-    const snapshot = await db.collection('users').doc(responseAuth.user.uid).get()
-    respond.user = {
-      ...snapshot.data(),
-      id: responseAuth.user.uid
+    const { success , content , message } = await apiFetch('/auth/sign-in',user,'POST')
+    if(success){
+      const logUser = {
+        ...content,
+        id: content._id,
+        username: `${content.name} ${content.lastName}`,
+        img: content.avatar
+      }
+      setUserLS(logUser)
+      setToken(content.token)
+      respond.user = logUser
+      return respond
     }
+    respond.error = message
     return respond
   } catch (error) {
-    switch(error.code){
-      case 'auth/wrong-password':
-        respond.error = 'Contraseña incorrecta'
-        break
-      case 'auth/user-not-found':
-        respond.error = 'Email no encontrado'
-        break
-      default:
-        respond.error = error.message
-    }
+    respond.error = error.message
     return respond
   }
 }

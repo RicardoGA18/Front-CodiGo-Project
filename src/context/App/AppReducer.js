@@ -1,4 +1,4 @@
-import {GET_CATEGORIES,GET_SLIDERS,SET_ERROR,GET_OFFERS,GET_PRODUCTS, GET_PRODUCT,ADD_CART,SET_USER} from '../types'
+import {GET_CATEGORIES,GET_SLIDERS,SET_ERROR,GET_OFFERS,GET_PRODUCTS, GET_PRODUCT,ADD_CART,SET_USER,GET_LATEST} from '../types'
 import setCartLS from '../utils/setCartLS'
 
 export default (state,action) => {
@@ -28,6 +28,11 @@ export default (state,action) => {
       return {
         ...state,
         offerProducts: payload
+      }
+    case GET_LATEST:
+      return {
+        ...state,
+        latestProducts: payload
       }
     case GET_PRODUCTS:
       return {

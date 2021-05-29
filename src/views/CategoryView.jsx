@@ -23,6 +23,14 @@ const CategoryView = () => {
   // Params
   const {id} = useParams()
 
+  // Get category name
+  const getCategoryName = () => {
+    if(categories && categories.length){
+      const categoryObject = categories.filter(category => category.id === id)
+      return categoryObject[0].name
+    }
+  }
+
   //InitView
   const initView = async () => {
     openModalCharge()
@@ -55,6 +63,7 @@ const CategoryView = () => {
       >
         <div className="CategoryView__Container">
           <ProductBox 
+            categoryName={getCategoryName()}
             products={products}
           />
         </div>

@@ -1,12 +1,13 @@
 import React,{useState,useContext,useEffect} from 'react'
 import AppContext from '../../context/App/AppContext'
 import {openModalCharge,closeModalCharge} from '../../utils/Alerts'
-import {useParams} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import Swal from 'sweetalert2'
+import verifySession from '../../context/utils/verifySession'
 
 const Profile = () => {
-  const {id} = useParams()
-  const {user,updateUser} = useContext(AppContext)
+  const history = useHistory()
+  const { user , updateUser , reviewUser } = useContext(AppContext)
   const [newUser,setNewUser] = useState({
     name: '',
     lastName: '',
@@ -14,14 +15,29 @@ const Profile = () => {
     email: ''
   })
 
+  const onlyLettersRegex = /^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'`'\-]+$/
+
+  const initProfile = async () => {
+    openModalCharge()
+    const logUser = await verifySession()
+    if(!logUser){
+      closeModalCharge()
+      reviewUser(null)
+      history.push('/')
+    }else{
+      reviewUser(logUser)
+      setNewUser({
+        name: user.name,
+        lastName: user.lastName,
+        img: null,
+        email: user.email,
+      })
+      closeModalCharge()
+    }
+  }
+
   useEffect(() => {
-    setNewUser({
-      name: user.name,
-      lastName: user.lastName,
-      img: null,
-      email: user.email,
-      id: user.id || id
-    })
+    initProfile()
   },[])
 
   const setImage = () => {
@@ -30,7 +46,7 @@ const Profile = () => {
         return <img src={user.img} alt="Foto de perfil"/>
       }
       return (
-        <p>{user.name[0]}{user.lastName[0]}</p>
+        <p>{user.name[0].toUpperCase()}{user.lastName[0].toUpperCase()}</p>
       )
     }else{
       const urlImg = URL.createObjectURL(newUser.img[0])
@@ -66,22 +82,23 @@ const Profile = () => {
     })
     if(result.isConfirmed){
       openModalCharge()
-      const respond = await updateUser({...newUser})
+      const respond = await updateUser({...newUser , id: user.id })
       if(respond){
         setNewUser({
           name: respond.name,
           lastName: respond.lastName,
           img: null,
           email: respond.email,
-          id: user.id || id
         })
+        closeModalCharge()
+        Swal.fire({
+          title: 'Listo!',
+          html: `<span style="color: black">Información Actualizada</span>`,
+          icon: 'success'
+        })
+      }else{
+        closeModalCharge()
       }
-      closeModalCharge()
-      Swal.fire({
-        title: 'Listo!',
-        html: `<span style="color: black">Información Actualizada</span>`,
-        icon: 'success'
-      })
     }
   }
 
@@ -99,15 +116,15 @@ const Profile = () => {
           </div>
           <div>
             <label htmlFor="user-name" className="Title-4">Nombre *</label>
-            <input type="text" id="user-name" className="Input Paragraph" name="name" onChange={manageInput} value={newUser.name} required pattern="[A-Za-z]{2,}"/>
+            <input type="text" id="user-name" className="Input Paragraph" name="name" onChange={manageInput} value={newUser.name} required pattern={onlyLettersRegex.source}/>
           </div>
           <div>
             <label htmlFor="user-lastName" className="Title-4">Apellido *</label>
-            <input type="text" id="user-lastName" className="Input Paragraph" name="lastName" onChange={manageInput} value={newUser.lastName} required pattern="[A-Za-z]{2,}"/>
+            <input type="text" id="user-lastName" className="Input Paragraph" name="lastName" onChange={manageInput} value={newUser.lastName} required pattern={onlyLettersRegex.source}/>
           </div>
           <div>
             <label htmlFor="user-email" className="Title-4">Email *</label>
-            <input type="text" id="user-email" className="Input Paragraph" disabled name="email" onChange={manageInput} value={newUser.email} required pattern=".{3,}"/>
+            <input type="email" id="user-email" className="Input Paragraph" name="email" onChange={manageInput} value={newUser.email} required pattern=".{3,}"/>
           </div>
           <div className="Profile__Submit">
             <input type="submit" className="Button-Primary Title-3-bold" value="Actualizar Información"/>

@@ -44,7 +44,7 @@ const ProductView = () => {
 
   useEffect(async ()=>{
     if(product){
-      await getProducts(product.category.id)
+      await getProducts(product.categoryId)
     }
   },[product])
 
@@ -78,7 +78,7 @@ const ProductView = () => {
       return(
         <ProductList 
           listName="Ver más"
-          seeAll={`/productos/${product.category.id}`}
+          seeAll={`/productos/${product.categoryId}`}
           products={products}
         />
       )

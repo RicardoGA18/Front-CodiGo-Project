@@ -4,12 +4,13 @@ import AppReducer from './AppReducer'
 import AppContext from './AppContext'
 
 // Types
-import {GET_CATEGORIES,GET_SLIDERS,SET_ERROR,GET_OFFERS,GET_PRODUCTS,GET_PRODUCT,ADD_CART,SET_USER} from '../types'
+import {CREATE_PREFERENCE,GET_CATEGORIES,GET_SLIDERS,SET_ERROR,GET_OFFERS,GET_PRODUCTS,GET_PRODUCT,ADD_CART,SET_USER,GET_LATEST} from '../types'
 
 // Fetch Functions
 import fetchSliders from '../utils/fetchSliders'
 import fetchCategories from '../utils/fetchCategories'
 import fetchOffers from '../utils/fetchOffers'
+import fetchLatest from '../utils/fetchLatest'
 import fetchProducts from '../utils/fetchProducts'
 import fetchProduct from '../utils/fetchProduct'
 import getCartLS from '../utils/getCartLS'
@@ -17,8 +18,8 @@ import addUser from '../utils/addUser'
 import logUser from '../utils/logUser'
 import setNewUser from '../utils/setNewUser'
 import signOutUser from '../utils/signOutUser'
-import signGoogle from '../utils/signGoogle'
-import signFacebook from '../utils/signFacebook'
+import { getUserLS } from '../utils/manageSession'
+import createPreference from '../utils/createPreference'
 
 const AppState = (props) => {
   const INITIAL_STATE = {
@@ -26,70 +27,37 @@ const AppState = (props) => {
     sliders: [],
     offerProducts: [],
     products: [],
+    latestProducts: [],
     product: null,
     error: null,
-    user: null,
+    user: getUserLS(),
     cart: getCartLS(),
   }
 
   const [state, dispatch] = useReducer(AppReducer, INITIAL_STATE)
 
+  // Payment
+  const getPreference = async (preference) => {
+    try {
+      const { url } = await createPreference(preference)
+      return url
+    } catch (error) {
+      dispatch({
+        type: SET_ERROR,
+        payload: error.message
+      })
+      return null
+    }
+  }
+
   // USER
-  const signInWithFacebook = async () => {
-    const response = await signFacebook()
-    if(typeof response === 'object'){
-      dispatch({
-        type: SET_USER,
-        payload: response
-      })
-      return true
-    }else if(typeof response === 'string'){
-      dispatch({
-        type: SET_ERROR,
-        payload: response
-      })
-      return false
-    }else{
-      console.log('Comportamiento no esperado en AppState/signInWithFacebook')
-      return false
-    }
-  }
-
-  const signInWithGoogle = async () => {
-    const response = await signGoogle()
-    if(typeof response === 'object'){
-      dispatch({
-        type: SET_USER,
-        payload: response
-      })
-      return true
-    }else if(typeof response === 'string'){
-      dispatch({
-        type: SET_ERROR,
-        payload: response
-      })
-      return false
-    }else{
-      console.log('Comportamiento no esperado en AppState/signInWithGoogle')
-      return false
-    }
-  }
-
-  const signOut = async () => {
-    const response = await signOutUser()
-    if (response) {
-      dispatch({
-        type: SET_ERROR,
-        payload: response
-      })
-      return false
-    }else{
-      dispatch({
-        type: SET_USER,
-        payload: response
-      })
-      return true
-    }
+  const signOut = () => {
+    const response = signOutUser()
+    dispatch({
+      type: SET_USER,
+      payload: response
+    })
+    return true
   }
 
   const updateUser = async user => {
@@ -134,7 +102,7 @@ const AppState = (props) => {
       })
       return true
     }else{
-      console.log('Patrón no esperado en AppState/registerUser!')
+      console.log('Patrón no esperado en AppState/loginUser!')
       return null
     }
   }
@@ -222,6 +190,21 @@ const AppState = (props) => {
     }
   }
 
+  const getLatestProducts = async () => {
+    try {
+      const latest = await fetchLatest()
+      dispatch({
+        type: GET_LATEST,
+        payload: latest
+      })
+    } catch (error) {
+      dispatch({
+        type: SET_ERROR,
+        payload: error.message
+      })
+    }
+  }
+
   // CATEGORIES
   const getCategories = async () => {
     try{
@@ -262,6 +245,13 @@ const AppState = (props) => {
     })
   }
 
+  const setError = (error) => {
+    dispatch({
+      type: SET_ERROR,
+      payload: error
+    })
+  }
+
   return (
     <AppContext.Provider value={{ 
       categories: state.categories,
@@ -270,22 +260,24 @@ const AppState = (props) => {
       user: state.user,
       cart: state.cart,
       offerProducts: state.offerProducts,
+      latestProducts: state.latestProducts,
       products: state.products,
       product: state.product,
       addCartItem,
       getProduct,
       getProducts,
       getOfferProducts,
+      getLatestProducts,
       getCategories,
       getSliders,
       cleanError,
+      setError,
       registerUser,
       loginUser,
       reviewUser,
       updateUser,
       signOut,
-      signInWithGoogle,
-      signInWithFacebook,
+      getPreference,
     }}>
       {props.children}
     </AppContext.Provider>

@@ -6,8 +6,10 @@ import {openModalCharge,closeModalCharge} from '../utils/Alerts'
 import {useHistory} from 'react-router-dom'
 
 const RegisterView = () => {
-  const {registerUser} = useContext(AppContext)
+  const { registerUser } = useContext(AppContext)
   const history = useHistory()
+
+  const onlyLettersRegex = /^[a-zA-ZàèìòùÀÈÌÒÙáéíóúýÁÉÍÓÚÝâêîôûÂÊÎÔÛãñõÃÑÕäëïöüÿÄËÏÖÜŸçÇßØøÅåÆæœ'`'\-]+$/
 
   useEffect(()=>{
     window.scroll(0,0)
@@ -18,7 +20,7 @@ const RegisterView = () => {
     lastName: '',
     email: '',
     pass1: '',
-    pass2: ''
+    pass2: '',
   })
 
   const actualizarInput = e => {
@@ -44,21 +46,14 @@ const RegisterView = () => {
       <div className="LogView__Form">
         <div className="LogForm">
           <div className="LogForm__Contain">
-            <button className="Button-Outline Title-3-bold">
-              <i className="fab fa-facebook-f"></i>
-              Facebook
-            </button>
-            <button className="Button-Outline Title-3-bold">
-              <i className="fab fa-google"></i>
-              Google
-            </button>
+            <h2 className="Title-1-bold" style={{ textAlign: 'center' , marginTop: 10 }}>Registro</h2>
             <div className="LogForm__Break">
               <hr/>
               <p className="Title-3-bold">o</p>
             </div>
             <form className="LogForm__Form" onSubmit={manejarSubmit}>
-              <input type="text" className="Input Title-3" placeholder="Nombre" name="name" value={user.name} onChange={(e) => {actualizarInput(e)}} required pattern="[A-Za-z]{2,}"/>
-              <input type="text" className="Input Title-3" placeholder="Apellido" name="lastName" value={user.lastName} onChange={(e) => {actualizarInput(e)}} required pattern="[A-Za-z]{2,}"/>
+              <input type="text" className="Input Title-3" placeholder="Nombre" name="name" value={user.name} onChange={(e) => {actualizarInput(e)}} required pattern={onlyLettersRegex.source}/>
+              <input type="text" className="Input Title-3" placeholder="Apellido" name="lastName" value={user.lastName} onChange={(e) => {actualizarInput(e)}} required pattern={onlyLettersRegex.source}/>
               <input type="email" className="Input Title-3" placeholder="Email" name="email" value={user.email} onChange={(e) => {actualizarInput(e)}} required pattern=".{3,}"/>
               <input type="password" className="Input Title-3" placeholder="Contraseña" name="pass1" value={user.pass1} onChange={(e) => {actualizarInput(e)}} pattern=".{6,}" required/>
               <input type="password" className="Input Title-3" placeholder="Repetir Contraseña" name="pass2" value={user.pass2} onChange={(e) => {actualizarInput(e)}} pattern=".{6,}" required/>

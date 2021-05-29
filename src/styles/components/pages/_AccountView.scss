@@ -67,6 +67,11 @@
       border: 1px solid $Hover-Light;
       border-top: none;
       cursor: pointer;
+      transition: .3s all;
+    }
+    .Paragraph:hover{
+      background-color: $Bg-Primary;
+      color: $Light;
     }
     .Paragraph:last-child{
       background-color: rgb(190, 36, 36);
@@ -74,6 +79,9 @@
       i{
         margin-left: 5px;
       }
+    }
+    .Paragraph:last-child:hover{
+      background-color: rgb(97, 9, 9);
     }
   }
   .Profile{

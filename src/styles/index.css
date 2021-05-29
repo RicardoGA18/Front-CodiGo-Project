@@ -236,7 +236,7 @@ input:focus, textarea:focus, select:focus, button:focus {
           align-items: center;
   border: none;
   border-radius: 10px;
-  background-color: #1DDECE;
+  background-color: #19968b;
   color: #FFFFFF;
   -webkit-transition: .3s all;
   transition: .3s all;
@@ -249,7 +249,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 
 .Button-Primary:hover {
-  background-color: #1F746D;
+  background-color: #103835;
 }
 
 .Button-Outline {
@@ -315,7 +315,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 
 .Button-Small:hover {
-  background-color: #1DDECE;
+  background-color: #19968b;
 }
 
 .Button-Map {
@@ -438,7 +438,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 
 .StaticSocial__Item:hover i {
-  color: #1DDECE;
+  color: #19968b;
 }
 
 .Nav {
@@ -606,14 +606,14 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 
 .HeadActions__Cart:hover i {
-  color: #1DDECE;
+  color: #19968b;
 }
 
 .HeadActions__CartNumber {
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: #1F746D;
+  background-color: #103835;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -703,7 +703,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 
 .HeadMobActions__CartNumber {
   position: absolute;
-  background-color: #1F746D;
+  background-color: #103835;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -1146,7 +1146,7 @@ input:focus, textarea:focus, select:focus, button:focus {
   top: 20px;
   right: 20px;
   border-radius: 50%;
-  background-color: #1DDECE;
+  background-color: #19968b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1255,7 +1255,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 
 .CartCard__Name:hover {
-  color: #1DDECE;
+  color: #19968b;
 }
 
 .CartCard__Amount {
@@ -1382,7 +1382,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 
 .Summary__Title .Title-2 {
-  color: #1DDECE;
+  color: #19968b;
 }
 
 .Summary__Item {
@@ -1624,7 +1624,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 
 .Slider__Control.is-active {
-  background-color: #1F746D;
+  background-color: #103835;
 }
 
 @media screen and (min-width: 500px) {
@@ -1805,7 +1805,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 
 .Footer a .Footer__Item:hover {
-  color: #1DDECE;
+  color: #19968b;
 }
 
 @media screen and (min-width: 500px) {
@@ -2237,7 +2237,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 
 .LogForm__Link p {
-  color: #1DDECE;
+  color: #19968b;
 }
 
 .LogForm__Footer {
@@ -2640,6 +2640,13 @@ input:focus, textarea:focus, select:focus, button:focus {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-top: none;
   cursor: pointer;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.AccountView__Options .Paragraph:hover {
+  background-color: #0F0F10;
+  color: #FFFFFF;
 }
 
 .AccountView__Options .Paragraph:last-child {
@@ -2649,6 +2656,10 @@ input:focus, textarea:focus, select:focus, button:focus {
 
 .AccountView__Options .Paragraph:last-child i {
   margin-left: 5px;
+}
+
+.AccountView__Options .Paragraph:last-child:hover {
+  background-color: #610909;
 }
 
 .AccountView .Profile {
@@ -2790,5 +2801,74 @@ input:focus, textarea:focus, select:focus, button:focus {
     width: 150px;
     height: 150px;
   }
+}
+
+.Payment {
+  width: 100%;
+  padding: 100px 0 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Payment__Container {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+.Payment__Icon {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Payment__Icon i {
+  color: green;
+  font-size: 120px;
+}
+
+.Payment__Icon i.success {
+  color: green;
+}
+
+.Payment__Icon i.fail {
+  color: red;
+}
+
+.Payment .Title-1 {
+  color: black;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.Payment .Paragraph {
+  margin-top: 10px;
+  color: black;
+  text-align: center;
+}
+
+.Payment__Button {
+  margin-top: 30px;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 /*# sourceMappingURL=index.css.map */

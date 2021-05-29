@@ -1,12 +1,9 @@
-import {auth} from '../../firebase' 
+import { setUserLS , setToken } from './manageSession'
 
-const signOutUser = async () => {
-  try {
-    await auth.signOut()
-    return null
-  } catch (error) {
-    return error.message
-  }
+const signOutUser = () => {
+  setUserLS(null)
+  setToken('')
+  return null
 }
 
 export default signOutUser

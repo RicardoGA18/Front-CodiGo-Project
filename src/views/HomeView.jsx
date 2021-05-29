@@ -17,10 +17,10 @@ import {openModalCharge,closeModalCharge} from '../utils/Alerts'
 
 const HomeView = () => {
   // State
-  const {categories,sliders,user,cart,offerProducts} = useContext(AppContext)
+  const {categories,sliders,user,cart,offerProducts,latestProducts} = useContext(AppContext)
 
   // Actions
-  const {getSliders,getCategories,getOfferProducts} = useContext(AppContext)
+  const {getSliders,getCategories,getOfferProducts,getLatestProducts} = useContext(AppContext)
 
   // InitView
   const initView = async () => {
@@ -28,6 +28,7 @@ const HomeView = () => {
     await getSliders()
     await getCategories()
     await getOfferProducts()
+    await getLatestProducts()
     closeModalCharge()
   }
 
@@ -54,6 +55,11 @@ const HomeView = () => {
             listName="OFERTAS"
             seeAll="/ofertas"
             products={offerProducts}
+          />
+          <ProductList 
+            listName="LO ÚLTIMO"
+            seeAll="/lo-ultimo"
+            products={latestProducts}
           />
           <Brands />
           <Advantage />

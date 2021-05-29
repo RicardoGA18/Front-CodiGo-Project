@@ -23,8 +23,9 @@ const NavMobile = ({categories,view}) => {
     checkButtons.forEach(checkButton => {
       checkButton.addEventListener('click',(e) => {
         const DropBox = e.target.parentElement.parentElement.nextElementSibling
+        const children = parseInt(DropBox.dataset.children)
         if(e.target.checked){
-          DropBox.style.maxHeight = '1000px'
+          DropBox.style.maxHeight = `${children * 41}px`
         }else{
           DropBox.style.maxHeight = '0px'
         }
@@ -53,7 +54,7 @@ const NavMobile = ({categories,view}) => {
             <i className="fas fa-angle-down fa-2x"></i>
           </div>
         </div>
-        <div className="DropBox">
+        <div className="DropBox" data-children="5">
           <Link className="DropBox__Item" to="/nosotros/quienes-somos">
             <p className="Paragraph">¿Quiénes somos?</p>
           </Link>
@@ -79,7 +80,7 @@ const NavMobile = ({categories,view}) => {
             <i className="fas fa-angle-down fa-2x"></i>
           </div>
         </div>
-        <div className="DropBox">
+        <div className="DropBox" data-children={categories.length}>
           {setCategories()}
         </div>
         <Link to="/contact" className={`NavMobile__Item ${setClassView('contact')}`}>

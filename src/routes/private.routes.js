@@ -8,7 +8,7 @@ const PrivateRoute = ({component,...options}) => {
   if(user){
     return <Route {...options} component={component} />
   }else{
-    return <Redirect to="/" />
+    return <Redirect to="/iniciar-sesion" />
   }
 }
 

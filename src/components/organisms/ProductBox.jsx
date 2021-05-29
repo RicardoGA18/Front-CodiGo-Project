@@ -2,7 +2,7 @@ import React from 'react'
 import Subtitle from '../molecules/Subtitle'
 import ProductCard from '../molecules/ProductCard'
 
-const ProductBox = ({products}) => {
+const ProductBox = ({products,categoryName}) => {
   const setProducts = () => {
     if(products.length){
       const offerProducts = products.filter(product => product.discount > 0)
@@ -31,7 +31,7 @@ const ProductBox = ({products}) => {
     if(products.length){
       return (
         <Subtitle 
-          name={products[0].category.name.toUpperCase()}
+          name={categoryName.toUpperCase()}
         />
       )
     }

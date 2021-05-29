@@ -6,7 +6,7 @@ const HeadMobActions = ({categories,view,user,cart}) => {
   const setUser = () => {
     if(user){
       return (
-        <Link to={`/perfil/${user.id}`} className="HeadMobActions__User">
+        <Link to={`/perfil`} className="HeadMobActions__User">
           <div className="HeadMobActions__UserImg">
             {user.img
               ? (<img src={user.img} alt={`Foto de perfil de ${user.name}`}/>)

@@ -6,7 +6,7 @@ import {openModalCharge,closeModalCharge} from '../utils/Alerts'
 import {useHistory} from 'react-router-dom'
 
 const LoginView = () => {
-  const {loginUser,signInWithGoogle,signInWithFacebook} = useContext(AppContext)
+  const { loginUser } = useContext(AppContext)
   const history = useHistory()
 
   useEffect(()=>{
@@ -35,38 +35,13 @@ const LoginView = () => {
     }
   }
 
-  const manageGoogleAuth = async () => {
-    openModalCharge()
-    const response = await signInWithGoogle()
-    closeModalCharge()
-    if(response){
-      history.push('/')
-    }
-  }
-
-  const manageFacebookAuth = async () => {
-    openModalCharge()
-    const response = await signInWithFacebook()
-    closeModalCharge()
-    if(response){
-      history.push('/')
-    }
-  }
-
   return (
     <div className="LogView">
       <LogNav />
       <div className="LogView__Form">
         <div className="LogForm">
           <div className="LogForm__Contain">
-            <button className="Button-Outline Title-3-bold" onClick={manageFacebookAuth}>
-              <i className="fab fa-facebook-f"></i>
-              Facebook
-            </button>
-            <button className="Button-Outline Title-3-bold" onClick={manageGoogleAuth}>
-              <i className="fab fa-google"></i>
-              Google
-            </button>
+            <h2 className="Title-1-bold" style={{ textAlign: 'center' , marginTop: 10 }}>Iniciar Sesión</h2>
             <div className="LogForm__Break">
               <hr/>
               <p className="Title-3-bold">o</p>

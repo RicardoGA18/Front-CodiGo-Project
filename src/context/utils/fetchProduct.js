@@ -1,13 +1,16 @@
-import { db } from '../../firebase'
+import { apiFetch }  from '../services/api'
 
-const fetchProduct = async (id) => {
+const fetchProduct = async (productId) => {
   try {
-    const snapshot = await db.collection('products').doc(id).get()
-    const product = {
-      ...snapshot.data(),
-      id: snapshot.id
+    const { success , content } = await apiFetch(`/products/getById/${productId}`)
+    if(success){
+      const newContent = {
+        ...content,
+        id: content._id
+      }
+      return newContent
     }
-    return product
+    return new Error(content)
   } catch (error) {
     return new Error(error)
   }

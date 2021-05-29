@@ -18,8 +18,10 @@ import AppState from './context/App/AppState'
 import CartView from './views/CartView'
 import PayView from './views/PayView'
 import AccountView from './views/AccountView'
-// Auxiliar
-import Probe from './views/Probe'
+import OfferView from './views/OfferView'
+import LatestView from './views/LatestView'
+import SuccessView from './views/SuccessView'
+import FailureView from './views/FailureView'
 
 function App() {
   return (
@@ -37,9 +39,12 @@ function App() {
               <PublicRoute exact path="/producto/:id" component={ProductView} />
               <PublicRoute exact path="/nosotros/:info" component={AboutView} />
               <PublicRoute exact path="/carrito" component={CartView} />
+              <PublicRoute exact path="/ofertas" component={OfferView} />
+              <PublicRoute exact path="/lo-ultimo" component={LatestView} />
               <PrivateRoute exact path="/pasarela-de-pago" component={PayView} />
-              <PrivateRoute exact path="/perfil/:id" component={AccountView} />
-              <PublicRoute exact path="/probe" component={Probe} />
+              <PrivateRoute exact path="/pasarela-de-pago/success" component={SuccessView} />
+              <PrivateRoute exact path="/pasarela-de-pago/failure" component={FailureView} />
+              <PrivateRoute exact path="/perfil" component={AccountView} />
               <Redirect path="/**" to="/" /> 
             </Switch>
           </BrowserRouter>

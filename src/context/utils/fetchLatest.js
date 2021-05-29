@@ -1,8 +1,8 @@
 import { apiFetch } from '../services/api'
 
-const fetchOffers = async () => {
+const fetchLatest = async () => {
   try {
-    const { success , content , message } = await apiFetch('/products/getOffers')
+    const { success , content , message } = await apiFetch('/products/getLatest')
     if(success){
       const newContent = content.map(product => {
         return {
@@ -18,4 +18,4 @@ const fetchOffers = async () => {
   }
 }
 
-export default fetchOffers
+export default fetchLatest
