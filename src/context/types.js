@@ -23,6 +23,6 @@ export const SET_USER = 'SET_USER'
 export const GET_PURCHASES = 'GET_PURCHASES'
 
 // LOCAL STORAGE
-export const LOCAL_KEY = 'Computer Store Cart Local Storage'
-export const ACCESS_TOKEN = 'COMPUTER_STORE_ACCESS_TOKEN'
-export const COMPUTER_STORE_USER = 'COMPUTER_STORE_USER'
+export const LOCAL_KEY = 'Computer Store Cart Local StorageV1'
+export const ACCESS_TOKEN = 'COMPUTER_STORE_ACCESS_TOKENV1'
+export const COMPUTER_STORE_USER = 'COMPUTER_STORE_USERV1'
