@@ -2149,6 +2149,7 @@ input:focus, textarea:focus, select:focus, button:focus {
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-column: 1 / 5;
+  padding: 15px 20px;
 }
 
 .Purchases .empty {
