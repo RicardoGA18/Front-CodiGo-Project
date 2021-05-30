@@ -35,7 +35,7 @@ const AccountView = () => {
   },[])
   // End InitView
 
-  const [content,setContent] = useState('purchases') 
+  const [content,setContent] = useState('profile') 
 
   const setContentSwitch = () => {
     switch (content){
